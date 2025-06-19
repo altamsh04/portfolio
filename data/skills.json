@@ -1,0 +1,20 @@
+{
+  "skills": {
+    "technical": [
+      { "name": "JavaScript/TypeScript", "level": 95, "category": "Frontend", "years": 6 },
+      { "name": "React/Next.js", "level": 92, "category": "Frontend", "years": 5 },
+      { "name": "Node.js", "level": 88, "category": "Backend", "years": 5 },
+      { "name": "Python", "level": 85, "category": "Backend", "years": 4 },
+      { "name": "AWS/Cloud", "level": 82, "category": "DevOps", "years": 4 },
+      { "name": "PostgreSQL", "level": 80, "category": "Database", "years": 5 },
+      { "name": "Docker/Kubernetes", "level": 78, "category": "DevOps", "years": 3 },
+      { "name": "GraphQL", "level": 75, "category": "API", "years": 3 }
+    ],
+    "soft": [
+      { "name": "Leadership", "level": 90 },
+      { "name": "Problem Solving", "level": 95 },
+      { "name": "Communication", "level": 88 },
+      { "name": "Team Collaboration", "level": 92 }
+    ]
+  }
+}

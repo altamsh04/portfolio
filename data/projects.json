@@ -1,0 +1,84 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "A comprehensive full-stack e-commerce solution featuring advanced user authentication, seamless payment processing, real-time inventory management, and AI-powered product recommendations.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "date": "2024-01-15",
+      "status": "Live",
+      "category": "Full Stack",
+      "technologies": ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Redis", "AWS"],
+      "metrics": {
+        "users": "10K+",
+        "performance": "98%",
+        "uptime": "99.9%"
+      },
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "AI Task Management Suite",
+      "description": "An intelligent collaborative task management platform with real-time synchronization, advanced analytics, AI-powered task prioritization, and seamless team collaboration features.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "date": "2023-11-20",
+      "status": "Live",
+      "category": "SaaS",
+      "technologies": ["React", "Node.js", "Socket.io", "MongoDB", "OpenAI", "Docker"],
+      "metrics": {
+        "users": "5K+",
+        "performance": "95%",
+        "uptime": "99.8%"
+      },
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Weather Intelligence Dashboard",
+      "description": "A sophisticated weather analytics platform providing hyper-local forecasts, interactive climate maps, severe weather alerts, and comprehensive meteorological data visualization.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "date": "2023-09-10",
+      "status": "Live",
+      "category": "Analytics",
+      "technologies": ["Vue.js", "OpenWeather API", "D3.js", "Tailwind CSS", "Python", "FastAPI"],
+      "metrics": {
+        "users": "15K+",
+        "performance": "97%",
+        "uptime": "99.7%"
+      },
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "Social Media Analytics Engine",
+      "description": "An enterprise-grade analytics platform for social media managers featuring advanced sentiment analysis, trend prediction, automated reporting, and comprehensive ROI tracking.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "date": "2023-07-05",
+      "status": "Live",
+      "category": "Analytics",
+      "technologies": ["React", "D3.js", "Python", "FastAPI", "TensorFlow", "PostgreSQL"],
+      "metrics": {
+        "users": "2K+",
+        "performance": "96%",
+        "uptime": "99.9%"
+      },
+      "featured": true
+    },
+    {
+      "id": 5,
+      "title": "Next-Gen Learning Platform",
+      "description": "A comprehensive learning management system with AI-powered personalized learning paths, interactive content creation tools, advanced progress analytics, and gamification features.",
+      "image": "/placeholder.svg?height=300&width=400",
+      "date": "2023-04-18",
+      "status": "Development",
+      "category": "EdTech",
+      "technologies": ["Angular", "Spring Boot", "MySQL", "AWS", "TensorFlow", "WebRTC"],
+      "metrics": {
+        "users": "8K+",
+        "performance": "94%",
+        "uptime": "99.5%"
+      },
+      "featured": false
+    }
+  ]
+}

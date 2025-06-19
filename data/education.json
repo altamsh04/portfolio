@@ -1,0 +1,66 @@
+{
+  "education": [
+    {
+      "id": 1,
+      "degree": "Master of Science in Computer Science",
+      "institution": "Stanford University",
+      "location": "Stanford, CA",
+      "startDate": "2017-09-01",
+      "endDate": "2019-06-15",
+      "gpa": "3.8/4.0",
+      "description": "Specialized in Software Engineering and Human-Computer Interaction with focus on machine learning applications. Completed advanced coursework in distributed systems and AI.",
+      "coursework": [
+        "Advanced Algorithms",
+        "Machine Learning",
+        "Distributed Systems",
+        "Human-Computer Interaction",
+        "Software Engineering",
+        "AI Ethics"
+      ],
+      "honors": ["Dean's List", "Research Assistant", "Graduate Teaching Assistant"],
+      "thesis": "Optimizing User Experience in Web Applications through Machine Learning",
+      "type": "Graduate"
+    },
+    {
+      "id": 2,
+      "degree": "Bachelor of Science in Information Technology",
+      "institution": "University of California, Berkeley",
+      "location": "Berkeley, CA",
+      "startDate": "2013-08-20",
+      "endDate": "2017-05-20",
+      "gpa": "3.6/4.0",
+      "description": "Comprehensive study of computer systems, programming paradigms, and information management. Active leadership in technical organizations and competitive programming.",
+      "coursework": [
+        "Data Structures",
+        "Database Systems",
+        "Web Development",
+        "Computer Networks",
+        "Software Architecture",
+        "Cybersecurity"
+      ],
+      "honors": ["Magna Cum Laude", "CS Club President", "Hackathon Winner (3x)"],
+      "thesis": "Scalable Web Architecture for High-Traffic Applications",
+      "type": "Undergraduate"
+    },
+    {
+      "id": 3,
+      "degree": "High School Diploma",
+      "institution": "Lincoln High School",
+      "location": "San Jose, CA",
+      "startDate": "2009-08-15",
+      "endDate": "2013-06-10",
+      "gpa": "3.9/4.0",
+      "description": "Graduated Summa Cum Laude with exceptional performance in STEM subjects. Led multiple technical initiatives and competitive programming teams.",
+      "coursework": [
+        "AP Computer Science A",
+        "AP Calculus BC",
+        "AP Physics C",
+        "Advanced Mathematics",
+        "AP Statistics"
+      ],
+      "honors": ["Valedictorian", "National Merit Scholar", "State Programming Champion"],
+      "thesis": null,
+      "type": "Secondary"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "experiences": [
+    {
+      "id": 1,
+      "title": "Senior Full Stack Developer",
+      "company": "TechCorp Solutions",
+      "location": "San Francisco, CA",
+      "startDate": "2022-03-01",
+      "endDate": null,
+      "current": true,
+      "description": "Leading the development of scalable web applications using cutting-edge technologies. Architecting cloud-native solutions, mentoring development teams, and driving technical innovation across multiple product lines.",
+      "achievements": [
+        "Architected microservices infrastructure serving 1M+ daily active users",
+        "Led cross-functional team of 12 engineers across 3 product verticals",
+        "Implemented DevOps practices reducing deployment time by 75%",
+        "Increased system performance by 60% through advanced optimization techniques"
+      ],
+      "technologies": ["React", "Node.js", "AWS", "Docker", "Kubernetes", "PostgreSQL"],
+      "teamSize": 12,
+      "impact": "High"
+    },
+    {
+      "id": 2,
+      "title": "Frontend Architect",
+      "company": "Digital Innovations Inc",
+      "location": "Austin, TX",
+      "startDate": "2020-06-15",
+      "endDate": "2022-02-28",
+      "current": false,
+      "description": "Spearheaded frontend architecture decisions and established development standards. Collaborated closely with UX/UI teams to deliver exceptional user experiences while maintaining high performance standards.",
+      "achievements": [
+        "Architected component library used across 25+ applications",
+        "Reduced bundle size by 45% through advanced code splitting strategies",
+        "Achieved 98% accessibility compliance across all products",
+        "Mentored 8 junior developers with 100% retention rate"
+      ],
+      "technologies": ["React", "TypeScript", "GraphQL", "Webpack", "Jest", "Cypress"],
+      "teamSize": 8,
+      "impact": "High"
+    },
+    {
+      "id": 3,
+      "title": "Full Stack Developer",
+      "company": "StartupHub",
+      "location": "Remote",
+      "startDate": "2019-01-10",
+      "endDate": "2020-06-10",
+      "current": false,
+      "description": "Developed end-to-end web solutions for diverse clients ranging from startups to enterprise companies. Gained extensive experience in agile methodologies and rapid prototyping.",
+      "achievements": [
+        "Delivered 35+ client projects with 98% satisfaction rate",
+        "Reduced development time by 40% through reusable component architecture",
+        "Contributed to 10+ open-source projects with 2K+ combined stars",
+        "Established CI/CD pipelines improving deployment reliability by 90%"
+      ],
+      "technologies": ["Vue.js", "Python", "Django", "PostgreSQL", "Redis", "Docker"],
+      "teamSize": 5,
+      "impact": "Medium"
+    }
+  ]
+}

@@ -84,14 +84,13 @@ const experienceData = {
       endDate: "2025-02-28",
       current: false,
       description:
-        "Spearheaded frontend architecture decisions and established development standards. Collaborated closely with UX/UI teams to deliver exceptional user experiences while maintaining high performance standards.",
+        "As a Freelance Software Developer at Knam Construction, I have been responsible for designing and building software solutions tailored to streamline construction management operations.",
       achievements: [
-        "Architected component library used across 25+ applications",
-        "Reduced bundle size by 45% through advanced code splitting strategies",
-        "Achieved 98% accessibility compliance across all products",
-        "Mentored 8 junior developers with 100% retention rate",
+        "Led the development of impactful software project that enhanced operational workflows and significantly reduced manual effort.",
+        "Built 'SiteIQ', a custom platform for Site management, Payment tracking, Vendor  coordination and Material logistics.",
+        "This solution reduced manual paperwork by over 70% and improved overall team efficiency.",
       ],
-      technologies: ["React", "TypeScript", "GraphQL", "Webpack", "Jest", "Cypress"],
+      technologies: ["React", "NodeJS", "RESTful APIs", "Firebase"],
     },
   ],
 }
@@ -189,7 +188,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300 font-mono">
       {/* Theme Toggle - Fixed Top Right */}
-      <div className="fixed top-4 right-4 z-50">
+      <div className="fixed top-3 right-3 sm:top-4 sm:right-4 z-50">
         <Button
           variant="outline"
           size="sm"
@@ -201,14 +200,14 @@ export default function Portfolio() {
       </div>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 py-6 space-y-8">
+      <main className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-6 sm:space-y-8">
         {/* Hero Section */}
         <section className="text-center space-y-4">
           <div className="space-y-3">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
               Altamsh Bairagdar
             </h2>
-            <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
               A Full Stack Developer Who Loves Backend Most
             </p>
             <div className="flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400">
@@ -220,11 +219,11 @@ export default function Portfolio() {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             <Button
               variant="outline"
               size="sm"
-              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-3 py-1"
+              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 sm:px-3"
               onClick={() => window.open("http://github.com/altamsh04", "_blank")}
             >
               <Github className="w-3 h-3 mr-1" />
@@ -233,7 +232,7 @@ export default function Portfolio() {
             <Button
               variant="outline"
               size="sm"
-              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-3 py-1"
+              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 sm:px-3"
               onClick={() => window.open("https://www.linkedin.com/in/altamsh-bairagdar-324ab7254", "_blank")}
             >
               <Linkedin className="w-3 h-3 mr-1" />
@@ -242,7 +241,7 @@ export default function Portfolio() {
             <Button
               variant="outline"
               size="sm"
-              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-3 py-1"
+              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 sm:px-3"
               onClick={() => window.open("https://x.com/altamsh04", "_blank")}
             >
               <Twitter className="w-3 h-3 mr-1" />
@@ -250,7 +249,7 @@ export default function Portfolio() {
             </Button>
             <Button
               size="sm"
-              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs px-3 py-1"
+              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs px-2 py-1 sm:px-3"
               onClick={() => window.open("mailto:bairagdaraltamsh@gmail.com", "_blank")}
             >
               <Mail className="w-3 h-3 mr-1" />
@@ -270,8 +269,8 @@ export default function Portfolio() {
                 key={project.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-lg transition-all duration-300"
               >
-                <CardContent className="p-4">
-                  <div className="flex items-start justify-between gap-4">
+                <CardContent className="p-3 sm:p-4">
+                  <div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4">
                     <div className="flex-1 space-y-2">
                       <div className="flex items-start justify-between">
                         <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">{project.title}</h4>
@@ -296,7 +295,7 @@ export default function Portfolio() {
                         </div>
                       )}
                     </div>
-                    <div className="flex gap-2 ml-4">
+                    <div className="flex gap-1.5 sm:gap-2 mt-2 sm:mt-0 sm:ml-4">
                       {project.demoUrl && (
                         <Button
                           size="sm"
@@ -336,12 +335,12 @@ export default function Portfolio() {
                 key={exp.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-4">
+                <CardContent className="p-3 sm:p-4">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
                     <div>
                       <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">{exp.title}</h4>
                       <p className="text-lime-600 dark:text-lime-400 font-medium text-sm">{exp.company}</p>
-                      <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-1">
+                      <div className="flex flex-col xs:flex-row xs:items-center gap-1 xs:gap-3 text-xs text-slate-500 dark:text-slate-400 mt-1">
                         <span>{exp.location}</span>
                         <span>
                           {formatDate(exp.startDate)} - {exp.current ? "Present" : formatDate(exp.endDate!)}
@@ -352,7 +351,7 @@ export default function Portfolio() {
                       </div>
                     </div>
                     {exp.current && (
-                      <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors">
+                      <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
                         Current
                       </Badge>
                     )}
@@ -391,7 +390,7 @@ export default function Portfolio() {
           <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             ACHIEVEMENTS
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
             {achievementsData.map((achievement) => (
               <Card
                 key={achievement.name}
@@ -427,20 +426,20 @@ export default function Portfolio() {
                 key={edu.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-4">
+                <CardContent className="p-3 sm:p-4">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-3">
                     <div>
                       <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">{edu.degree}</h4>
                       <p className="text-lime-600 dark:text-lime-400 font-medium text-sm">{edu.institution}</p>
-                      <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-1">
+                      <div className="flex flex-col xs:flex-row xs:items-center gap-1 xs:gap-3 text-xs text-slate-500 dark:text-slate-400 mt-1">
                         <span>{edu.location}</span>
                         <span>
                           {formatDate(edu.startDate)} - {formatDate(edu.endDate)}
                         </span>
                       </div>
                     </div>
-                    <Badge variant="secondary" className="text-xs">
-                      GPA: {edu.gpa}
+                    <Badge variant="secondary" className="text-xs self-start">
+                      {edu.gpa}
                     </Badge>
                   </div>
                   {edu.honors && (
@@ -464,8 +463,8 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className="bg-slate-900 dark:bg-slate-950 text-white mt-12">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-6 h-6 bg-lime-400 rounded-lg flex items-center justify-center">

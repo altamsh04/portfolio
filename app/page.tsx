@@ -193,37 +193,37 @@ export default function Portfolio() {
           variant="outline"
           size="sm"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors p-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm"
+          className="border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors p-1.5 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm"
         >
           {theme === "dark" ? <Sun className="w-3 h-3" /> : <Moon className="w-3 h-3" />}
         </Button>
       </div>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-6 sm:space-y-8">
+      <main className="max-w-4xl mx-auto px-3 sm:px-4 pt-12 sm:pt-16 md:pt-20 pb-4 sm:pb-6 space-y-5 sm:space-y-6">
         {/* Hero Section */}
-        <section className="text-center space-y-4">
-          <div className="space-y-3">
+        <section className="text-center space-y-3">
+          <div className="space-y-2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
               Altamsh Bairagdar
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
               A Full Stack Developer Who Loves Backend Most
             </p>
-            <div className="flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
               <MapPin className="w-3 h-3" />
               <span>Miraj Maharashtra, India</span>
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse ml-2"></div>
+              <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse ml-1.5"></div>
               <span>Available for work</span>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
             <Button
               variant="outline"
               size="sm"
-              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 sm:px-3"
+              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1"
               onClick={() => window.open("http://github.com/altamsh04", "_blank")}
             >
               <Github className="w-3 h-3 mr-1" />
@@ -232,7 +232,7 @@ export default function Portfolio() {
             <Button
               variant="outline"
               size="sm"
-              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 sm:px-3"
+              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1"
               onClick={() => window.open("https://www.linkedin.com/in/altamsh-bairagdar-324ab7254", "_blank")}
             >
               <Linkedin className="w-3 h-3 mr-1" />
@@ -241,7 +241,7 @@ export default function Portfolio() {
             <Button
               variant="outline"
               size="sm"
-              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 sm:px-3"
+              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1"
               onClick={() => window.open("https://x.com/altamsh04", "_blank")}
             >
               <Twitter className="w-3 h-3 mr-1" />
@@ -249,7 +249,7 @@ export default function Portfolio() {
             </Button>
             <Button
               size="sm"
-              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs px-2 py-1 sm:px-3"
+              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs px-2 py-1"
               onClick={() => window.open("mailto:bairagdaraltamsh@gmail.com", "_blank")}
             >
               <Mail className="w-3 h-3 mr-1" />
@@ -259,30 +259,30 @@ export default function Portfolio() {
         </section>
 
         {/* Projects */}
-        <section className="space-y-4">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+        <section className="space-y-3">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             PROJECTS
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-2.5">
             {projectsData.projects.map((project) => (
               <Card
                 key={project.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-lg transition-all duration-300"
               >
-                <CardContent className="p-3 sm:p-4">
-                  <div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4">
-                    <div className="flex-1 space-y-2">
+                <CardContent className="p-3">
+                  <div className="flex flex-col sm:flex-row items-start justify-between gap-2.5 sm:gap-3">
+                    <div className="flex-1 space-y-1.5">
                       <div className="flex items-start justify-between">
-                        <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">{project.title}</h4>
+                        <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{project.title}</h4>
                         <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors">
                           {project.status}
                         </Badge>
                       </div>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                         {project.description}
                       </p>
                       {project.technologies && (
-                        <div className="flex flex-wrap gap-1 mt-2">
+                        <div className="flex flex-wrap gap-1 mt-1.5">
                           {project.technologies.map((tech) => (
                             <Badge
                               key={tech}
@@ -295,25 +295,25 @@ export default function Portfolio() {
                         </div>
                       )}
                     </div>
-                    <div className="flex gap-1.5 sm:gap-2 mt-2 sm:mt-0 sm:ml-4">
+                    <div className="flex gap-1.5 mt-1.5 sm:mt-0 sm:ml-3">
                       {project.demoUrl && (
                         <Button
                           size="sm"
                           variant="outline"
-                          className="p-2 border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
+                          className="p-1.5 border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
                           onClick={() => window.open(project.demoUrl, "_blank")}
                         >
-                          <ExternalLink className="w-4 h-4" />
+                          <ExternalLink className="w-3.5 h-3.5" />
                         </Button>
                       )}
                       {project.codeUrl && (
                         <Button
                           size="sm"
                           variant="outline"
-                          className="p-2 border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
+                          className="p-1.5 border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
                           onClick={() => window.open(project.codeUrl, "_blank")}
                         >
-                          <Github className="w-4 h-4" />
+                          <Github className="w-3.5 h-3.5" />
                         </Button>
                       )}
                     </div>
@@ -325,22 +325,22 @@ export default function Portfolio() {
         </section>
 
         {/* Experience */}
-        <section className="space-y-4">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+        <section className="space-y-3">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             EXPERIENCE
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {experienceData.experiences.map((exp) => (
               <Card
                 key={exp.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-3 sm:p-4">
-                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
+                <CardContent className="p-3">
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-2.5">
                     <div>
-                      <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">{exp.title}</h4>
-                      <p className="text-lime-600 dark:text-lime-400 font-medium text-sm">{exp.company}</p>
-                      <div className="flex flex-col xs:flex-row xs:items-center gap-1 xs:gap-3 text-xs text-slate-500 dark:text-slate-400 mt-1">
+                      <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{exp.title}</h4>
+                      <p className="text-lime-600 dark:text-lime-400 font-medium text-xs">{exp.company}</p>
+                      <div className="flex flex-col xs:flex-row xs:items-center gap-1 xs:gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1">
                         <span>{exp.location}</span>
                         <span>
                           {formatDate(exp.startDate)} - {exp.current ? "Present" : formatDate(exp.endDate!)}
@@ -356,19 +356,19 @@ export default function Portfolio() {
                       </Badge>
                     )}
                   </div>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">{exp.description}</p>
-                  <div className="space-y-2">
-                    <h5 className="font-medium text-slate-900 dark:text-slate-100 text-sm">KEY ACHIEVEMENTS:</h5>
-                    <ul className="space-y-1">
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mb-2.5">{exp.description}</p>
+                  <div className="space-y-1.5">
+                    <h5 className="font-medium text-slate-900 dark:text-slate-100 text-xs">KEY ACHIEVEMENTS:</h5>
+                    <ul className="space-y-0.5">
                       {exp.achievements.map((achievement, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-400">
+                        <li key={i} className="flex items-start gap-1.5 text-xs text-slate-600 dark:text-slate-400">
                           <div className="w-1 h-1 bg-lime-400 rounded-full mt-1.5 flex-shrink-0"></div>
                           {achievement}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="flex flex-wrap gap-1 mt-3">
+                  <div className="flex flex-wrap gap-1 mt-2.5">
                     {exp.technologies.map((tech) => (
                       <Badge
                         key={tech}
@@ -386,27 +386,27 @@ export default function Portfolio() {
         </section>
 
         {/* Achievements */}
-        <section className="space-y-4">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+        <section className="space-y-3">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             ACHIEVEMENTS
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {achievementsData.map((achievement) => (
               <Card
                 key={achievement.name}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-3">
+                <CardContent className="p-2.5">
                   <div className="flex items-start gap-2">
-                    <div className="w-6 h-6 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Trophy className="w-3 h-3 text-lime-600 dark:text-lime-400" />
+                    <div className="w-5 h-5 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Trophy className="w-2.5 h-2.5 text-lime-600 dark:text-lime-400" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xs">{achievement.name}</h4>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
                         {achievement.issuer} • {achievement.year}
                       </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-500 mt-1">{achievement.description}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-500 mt-0.5">{achievement.description}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -416,22 +416,22 @@ export default function Portfolio() {
         </section>
 
         {/* Education */}
-        <section className="space-y-4">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+        <section className="space-y-3">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             EDUCATION
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-2.5">
             {educationData.education.map((edu) => (
               <Card
                 key={edu.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-3 sm:p-4">
-                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-3">
+                <CardContent className="p-3">
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
                     <div>
-                      <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">{edu.degree}</h4>
-                      <p className="text-lime-600 dark:text-lime-400 font-medium text-sm">{edu.institution}</p>
-                      <div className="flex flex-col xs:flex-row xs:items-center gap-1 xs:gap-3 text-xs text-slate-500 dark:text-slate-400 mt-1">
+                      <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{edu.degree}</h4>
+                      <p className="text-lime-600 dark:text-lime-400 font-medium text-xs">{edu.institution}</p>
+                      <div className="flex flex-col xs:flex-row xs:items-center gap-1 xs:gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1">
                         <span>{edu.location}</span>
                         <span>
                           {formatDate(edu.startDate)} - {formatDate(edu.endDate)}
@@ -443,7 +443,7 @@ export default function Portfolio() {
                     </Badge>
                   </div>
                   {edu.honors && (
-                    <div className="flex flex-wrap gap-1 mt-3">
+                    <div className="flex flex-wrap gap-1 mt-2.5">
                       {edu.honors.map((honor) => (
                         <Badge
                           key={honor}
@@ -462,66 +462,66 @@ export default function Portfolio() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 dark:bg-slate-950 text-white mt-12">
-        <div className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <footer className="bg-slate-900 dark:bg-slate-950 text-white mt-8">
+        <div className="max-w-4xl mx-auto px-3 sm:px-4 py-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
             <div>
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-6 h-6 bg-lime-400 rounded-lg flex items-center justify-center">
-                  <Code2 className="w-4 h-4 text-slate-900" />
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-5 h-5 bg-lime-400 rounded-lg flex items-center justify-center">
+                  <Code2 className="w-3 h-3 text-slate-900" />
                 </div>
-                <span className="text-sm font-bold">ALTAMSH.BAIRAGDAR</span>
+                <span className="text-xs font-bold">ALTAMSH.BAIRAGDAR</span>
               </div>
               <p className="text-slate-400 text-xs">Building the future, one line of code at a time.</p>
             </div>
             <div>
-              <h4 className="font-bold mb-3 text-xs">CONNECT</h4>
+              <h4 className="font-bold mb-2 text-xs">CONNECT</h4>
               <div className="space-y-1 text-xs text-slate-400">
-                <div className="flex items-center gap-2">
-                  <Mail className="w-3 h-3" />
+                <div className="flex items-center gap-1.5">
+                  <Mail className="w-2.5 h-2.5" />
                   bairagdaraltamsh@gmail.com
                 </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-3 h-3" />
+                <div className="flex items-center gap-1.5">
+                  <Phone className="w-2.5 h-2.5" />
                   +91 8010208605
                 </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-3 h-3" />
+                <div className="flex items-center gap-1.5">
+                  <MapPin className="w-2.5 h-2.5" />
                   Miraj Maharashtra, India
                 </div>
               </div>
             </div>
             <div>
-              <h4 className="font-bold mb-3 text-xs">LINKS</h4>
-              <div className="flex gap-2">
+              <h4 className="font-bold mb-2 text-xs">LINKS</h4>
+              <div className="flex gap-1.5">
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-1.5"
+                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-1"
                   onClick={() => window.open("http://github.com/altamsh04", "_blank")}
                 >
-                  <Github className="w-3 h-3" />
+                  <Github className="w-2.5 h-2.5" />
                 </Button>
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-1.5"
+                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-1"
                   onClick={() => window.open("https://www.linkedin.com/in/altamsh-bairagdar-324ab7254", "_blank")}
                 >
-                  <Linkedin className="w-3 h-3" />
+                  <Linkedin className="w-2.5 h-2.5" />
                 </Button>
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-1.5"
+                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-1"
                   onClick={() => window.open("https://x.com/altamsh04", "_blank")}
                 >
-                  <Twitter className="w-3 h-3" />
+                  <Twitter className="w-2.5 h-2.5" />
                 </Button>
               </div>
             </div>
           </div>
-          <div className="border-t border-slate-800 mt-6 pt-6 text-center text-slate-400 text-xs">
+          <div className="border-t border-slate-800 mt-4 pt-4 text-center text-slate-400 text-xs">
             <p>&copy; {new Date().getFullYear()} ALTAMSH BAIRAGDAR. ALL RIGHTS RESERVED.</p>
           </div>
         </div>

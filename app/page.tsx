@@ -16,7 +16,7 @@ const projectsData = {
       description:
         "Chat with Your Database. Transform complex data into simple conversations. Search, explore, and interact with your product catalog using natural language — no SQL required.",
       status: "Personal",
-      demoUrl: "https://accuiahq.vercel.app/",
+      demoUrl: "https://accuia.vercel.app/",
       technologies: ["AI", "NextJS", "FastAPI", "Supabase"],
     },
     {

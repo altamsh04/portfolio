@@ -12,6 +12,15 @@ const projectsData = {
   projects: [
     {
       id: 1,
+      title: "Accuia",
+      description:
+        "Chat with Your Database. Transform complex data into simple conversations. Search, explore, and interact with your product catalog using natural language — no SQL required.",
+      status: "Personal",
+      demoUrl: "https://accuiahq.vercel.app/",
+      technologies: ["AI", "NextJS", "FastAPI", "Supabase"],
+    },
+    {
+      id: 2,
       title: "Ghibli Meme Maker",
       description:
         "Transform your favorite Studio Ghibli moments into hilarious memes with our easy-to-use meme creator.",
@@ -20,7 +29,7 @@ const projectsData = {
       technologies: ["React", "TailwindCSS", "Meme Editor"],
     },
     {
-      id: 2,
+      id: 3,
       title: "AI Powered LMS",
       description:
         "A learning management system powered by AI, using RAG (Retrieval-Augmented Generation) architecture for enhanced learning experiences.",
@@ -29,7 +38,7 @@ const projectsData = {
       technologies: ["AI", "RAG", "AWS S3", "React", "Django"],
     },
     {
-      id: 3,
+      id: 4,
       title: "Collaborative Project Management Tools for Remote Teams",
       description: "A comprehensive project management tool designed for remote teams to collaborate effectively.",
       status: "Hackathon",
@@ -37,7 +46,7 @@ const projectsData = {
       technologies: ["MongoDB", "Express", "React", "NodeJS"],
     },
     {
-      id: 4,
+      id: 5,
       title: "Embeetek Technologies",
       description:
         "Personal organization website for project inquiry, project showcase, overall company services, features with admin panel.",
@@ -45,7 +54,7 @@ const projectsData = {
       demoUrl: "https://www.embeetek.com/",
     },
     {
-      id: 5,
+      id: 6,
       title: "Basu Engineering",
       description:
         "Personal Organization website for products inquiry, overall company services, features etc with admin panel.",

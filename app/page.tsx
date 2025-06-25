@@ -9,7 +9,6 @@ import { MapPin, Code2, ExternalLink, Github, Trophy, Moon, Sun, Mail, Linkedin,
 
 // Static data
 const projectsData = {
-{
   "projects": [
     {
       "id": 1,
@@ -66,7 +65,7 @@ const projectsData = {
       "demoUrl": "http://www.basuengineering.in"
     }
   ]
-}
+};
 
 const experienceData = {
   experiences: [

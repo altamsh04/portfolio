@@ -23,11 +23,20 @@ const projectsData = {
       "title": "reminder-cli",
       "description": "A simple Node.js command-line tool that allows users to set reminders for tasks or events directly from the terminal. Over 350+ downloads and growing.",
       "status": "Personal",
-      "codeUrl": "https://www.npmjs.com/package/@altamsh04/reminder-cli",
+      "demoUrl": "https://www.npmjs.com/package/@altamsh04/reminder-cli",
+      "codeUrl": "https://github.com/altamsh04/reminder-cli",
       "technologies": ["NodeJS", "CLI", "Task Manager", "Terminal", "Productivity"]
     },
     {
       "id": 3,
+      "title": "NPM Analytics Pro",
+      "description": "Advanced package insights & comparison tool for NPM modules including trends, bundle analysis, and health scoring.",
+      "status": "Personal",
+      "demoUrl": "http://npm-analytics-pro.vercel.app/",
+      "technologies": ["NextJS", "TailwindCSS", "Vercel", "NPM API"]
+    },
+    {
+      "id": 4,
       "title": "Ghibli Meme Maker",
       "description": "Transform your favorite Studio Ghibli moments into hilarious memes with our easy-to-use meme creator.",
       "status": "Personal",
@@ -35,7 +44,7 @@ const projectsData = {
       "technologies": ["React", "TailwindCSS", "Meme Editor"]
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "AI Powered LMS",
       "description": "A learning management system powered by AI, using RAG (Retrieval-Augmented Generation) architecture for enhanced learning experiences.",
       "status": "Hackathon",
@@ -43,7 +52,7 @@ const projectsData = {
       "technologies": ["AI", "RAG", "AWS S3", "React", "Django"]
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Collaborative Project Management Tools for Remote Teams",
       "description": "A comprehensive project management tool designed for remote teams to collaborate effectively.",
       "status": "Hackathon",
@@ -51,14 +60,14 @@ const projectsData = {
       "technologies": ["MongoDB", "Express", "React", "NodeJS"]
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "Embeetek Technologies",
       "description": "Personal organization website for project inquiry, project showcase, overall company services, features with admin panel.",
       "status": "Freelance",
       "demoUrl": "https://www.embeetek.com/"
     },
     {
-      "id": 7,
+      "id": 8,
       "title": "Basu Engineering",
       "description": "Personal Organization website for products inquiry, overall company services, features etc with admin panel.",
       "status": "Freelance",
@@ -66,6 +75,7 @@ const projectsData = {
     }
   ]
 };
+
 
 const experienceData = {
   experiences: [

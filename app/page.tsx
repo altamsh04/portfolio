@@ -9,59 +9,63 @@ import { MapPin, Code2, ExternalLink, Github, Trophy, Moon, Sun, Mail, Linkedin,
 
 // Static data
 const projectsData = {
-  projects: [
+{
+  "projects": [
     {
-      id: 1,
-      title: "Accuia",
-      description:
-        "Chat with Your Database. Transform complex data into simple conversations. Search, explore, and interact with your product catalog using natural language — no SQL required.",
-      status: "Personal",
-      demoUrl: "https://accuia.vercel.app/",
-      technologies: ["AI", "NextJS", "FastAPI", "Supabase", "Postgres"],
+      "id": 1,
+      "title": "Accuia",
+      "description": "Chat with Your Database. Transform complex data into simple conversations. Search, explore, and interact with your product catalog using natural language — no SQL required.",
+      "status": "Personal",
+      "demoUrl": "https://accuia.vercel.app/",
+      "technologies": ["AI", "NextJS", "FastAPI", "Supabase", "Postgres"]
     },
     {
-      id: 2,
-      title: "Ghibli Meme Maker",
-      description:
-        "Transform your favorite Studio Ghibli moments into hilarious memes with our easy-to-use meme creator.",
-      status: "Personal",
-      demoUrl: "https://www.ghiblimemes.fun/",
-      technologies: ["React", "TailwindCSS", "Meme Editor"],
+      "id": 2,
+      "title": "reminder-cli",
+      "description": "A simple Node.js command-line tool that allows users to set reminders for tasks or events directly from the terminal. Over 350+ downloads and growing.",
+      "status": "Personal",
+      "codeUrl": "https://www.npmjs.com/package/@altamsh04/reminder-cli",
+      "technologies": ["NodeJS", "CLI", "Task Manager", "Terminal", "Productivity"]
     },
     {
-      id: 3,
-      title: "AI Powered LMS",
-      description:
-        "A learning management system powered by AI, using RAG (Retrieval-Augmented Generation) architecture for enhanced learning experiences.",
-      status: "Hackathon",
-      codeUrl: "https://github.com/altamsh04/aipoweredlms-backend",
-      technologies: ["AI", "RAG", "AWS S3", "React", "Django"],
+      "id": 3,
+      "title": "Ghibli Meme Maker",
+      "description": "Transform your favorite Studio Ghibli moments into hilarious memes with our easy-to-use meme creator.",
+      "status": "Personal",
+      "demoUrl": "https://www.ghiblimemes.fun/",
+      "technologies": ["React", "TailwindCSS", "Meme Editor"]
     },
     {
-      id: 4,
-      title: "Collaborative Project Management Tools for Remote Teams",
-      description: "A comprehensive project management tool designed for remote teams to collaborate effectively.",
-      status: "Hackathon",
-      codeUrl: "https://github.com/altamsh04/hackathon-project-at-sgu",
-      technologies: ["MongoDB", "Express", "React", "NodeJS"],
+      "id": 4,
+      "title": "AI Powered LMS",
+      "description": "A learning management system powered by AI, using RAG (Retrieval-Augmented Generation) architecture for enhanced learning experiences.",
+      "status": "Hackathon",
+      "codeUrl": "https://github.com/altamsh04/aipoweredlms-backend",
+      "technologies": ["AI", "RAG", "AWS S3", "React", "Django"]
     },
     {
-      id: 5,
-      title: "Embeetek Technologies",
-      description:
-        "Personal organization website for project inquiry, project showcase, overall company services, features with admin panel.",
-      status: "Freelance",
-      demoUrl: "https://www.embeetek.com/",
+      "id": 5,
+      "title": "Collaborative Project Management Tools for Remote Teams",
+      "description": "A comprehensive project management tool designed for remote teams to collaborate effectively.",
+      "status": "Hackathon",
+      "codeUrl": "https://github.com/altamsh04/hackathon-project-at-sgu",
+      "technologies": ["MongoDB", "Express", "React", "NodeJS"]
     },
     {
-      id: 6,
-      title: "Basu Engineering",
-      description:
-        "Personal Organization website for products inquiry, overall company services, features etc with admin panel.",
-      status: "Freelance",
-      demoUrl: "www.basuengineering.in",
+      "id": 6,
+      "title": "Embeetek Technologies",
+      "description": "Personal organization website for project inquiry, project showcase, overall company services, features with admin panel.",
+      "status": "Freelance",
+      "demoUrl": "https://www.embeetek.com/"
     },
-  ],
+    {
+      "id": 7,
+      "title": "Basu Engineering",
+      "description": "Personal Organization website for products inquiry, overall company services, features etc with admin panel.",
+      "status": "Freelance",
+      "demoUrl": "http://www.basuengineering.in"
+    }
+  ]
 }
 
 const experienceData = {

@@ -32,7 +32,7 @@ const projectsData = {
       "title": "NPM Analytics Pro",
       "description": "Advanced package insights & comparison tool for NPM modules including trends, bundle analysis, and health scoring.",
       "status": "Personal",
-      "demoUrl": "http://npm-analytics-pro.vercel.app/",
+      "demoUrl": "https://npm-analytics-pro.altamsh.me/",
       "technologies": ["NextJS", "TailwindCSS", "Vercel", "NPM API"]
     },
     {
@@ -64,14 +64,16 @@ const projectsData = {
       "title": "Embeetek Technologies",
       "description": "Personal organization website for project inquiry, project showcase, overall company services, features with admin panel.",
       "status": "Freelance",
-      "demoUrl": "https://www.embeetek.com/"
+      "demoUrl": "https://www.embeetek.com/",
+      "technologies": ["FullStack"]
     },
     {
       "id": 8,
       "title": "Basu Engineering",
       "description": "Personal Organization website for products inquiry, overall company services, features etc with admin panel.",
       "status": "Freelance",
-      "demoUrl": "http://www.basuengineering.in"
+      "demoUrl": "http://www.basuengineering.in",
+      "technologies": ["FullStack"]
     }
   ]
 };

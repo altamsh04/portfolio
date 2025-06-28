@@ -178,10 +178,38 @@ const educationData = {
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
+  const [animationStates, setAnimationStates] = useState({
+    hero: false,
+    projects: false,
+    experience: false,
+    achievements: false,
+    education: false,
+    footer: false
+  })
   const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
+    
+    // Staggered animation timing
+    const animationDelays = {
+      hero: 200,
+      projects: 600,
+      experience: 1000,
+      achievements: 1400,
+      education: 1800,
+      footer: 2200
+    }
+
+    // Trigger animations with delays
+    Object.entries(animationDelays).forEach(([key, delay]) => {
+      setTimeout(() => {
+        setAnimationStates(prev => ({
+          ...prev,
+          [key]: true
+        }))
+      }, delay)
+    })
   }, [])
 
   const formatDate = (dateString: string) => {
@@ -226,7 +254,13 @@ export default function Portfolio() {
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-3 sm:px-4 pt-12 sm:pt-16 md:pt-20 pb-4 sm:pb-6 space-y-5 sm:space-y-6">
         {/* Hero Section */}
-        <section className="text-center space-y-3">
+        <section 
+          className={`text-center space-y-3 transition-all duration-1000 ease-out ${
+            animationStates.hero 
+              ? 'blur-0 opacity-100 translate-y-0' 
+              : 'blur-md opacity-0 translate-y-4'
+          }`}
+        >
           <div className="space-y-2">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
               Altamsh Bairagdar
@@ -287,7 +321,13 @@ export default function Portfolio() {
         </section>
 
         {/* Projects */}
-        <section className="space-y-3">
+        <section 
+          className={`space-y-3 transition-all duration-1000 ease-out ${
+            animationStates.projects 
+              ? 'blur-0 opacity-100 translate-y-0' 
+              : 'blur-md opacity-0 translate-y-4'
+          }`}
+        >
           <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             PROJECTS
           </h3>
@@ -360,7 +400,13 @@ export default function Portfolio() {
         </section>
 
         {/* Experience */}
-        <section className="space-y-3">
+        <section 
+          className={`space-y-3 transition-all duration-1000 ease-out ${
+            animationStates.experience 
+              ? 'blur-0 opacity-100 translate-y-0' 
+              : 'blur-md opacity-0 translate-y-4'
+          }`}
+        >
           <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             EXPERIENCE
           </h3>
@@ -434,7 +480,13 @@ export default function Portfolio() {
         </section>
 
         {/* Achievements */}
-        <section className="space-y-3">
+        <section 
+          className={`space-y-3 transition-all duration-1000 ease-out ${
+            animationStates.achievements 
+              ? 'blur-0 opacity-100 translate-y-0' 
+              : 'blur-md opacity-0 translate-y-4'
+          }`}
+        >
           <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             ACHIEVEMENTS
           </h3>
@@ -464,7 +516,13 @@ export default function Portfolio() {
         </section>
 
         {/* Education */}
-        <section className="space-y-3">
+        <section 
+          className={`space-y-3 transition-all duration-1000 ease-out ${
+            animationStates.education 
+              ? 'blur-0 opacity-100 translate-y-0' 
+              : 'blur-md opacity-0 translate-y-4'
+          }`}
+        >
           <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             EDUCATION
           </h3>
@@ -516,7 +574,13 @@ export default function Portfolio() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 dark:bg-slate-950 text-white mt-8">
+      <footer 
+        className={`bg-slate-900 dark:bg-slate-950 text-white mt-8 transition-all duration-1000 ease-out ${
+          animationStates.footer 
+            ? 'blur-0 opacity-100 translate-y-0' 
+            : 'blur-md opacity-0 translate-y-4'
+        }`}
+      >
         <div className="max-w-4xl mx-auto px-3 sm:px-4 py-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             <div>

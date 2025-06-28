@@ -23,7 +23,35 @@ const config: Config = {
         xs: "475px",
       },
       fontFamily: {
+        sans: [
+          "var(--font-outfit)",
+          "var(--font-poppins)",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
         mono: [
+          "var(--font-jetbrains-mono)",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Consolas",
+          "Liberation Mono",
+          "Menlo",
+          "monospace",
+        ],
+        display: [
+          "var(--font-poppins)",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+        body: [
+          "var(--font-outfit)",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+        code: [
           "var(--font-jetbrains-mono)",
           "ui-monospace",
           "SFMono-Regular",

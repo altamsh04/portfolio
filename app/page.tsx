@@ -255,13 +255,26 @@ export default function Portfolio() {
       <main className="max-w-4xl mx-auto px-3 sm:px-4 pt-12 sm:pt-16 md:pt-20 pb-4 sm:pb-6 space-y-5 sm:space-y-6">
         {/* Hero Section */}
         <section 
-          className={`text-center space-y-3 transition-all duration-1000 ease-out ${
+          className={`text-center space-y-6 sm:space-y-8 transition-all duration-1000 ease-out ${
             animationStates.hero 
               ? 'blur-0 opacity-100 translate-y-0' 
               : 'blur-md opacity-0 translate-y-4'
           }`}
         >
-          <div className="space-y-2">
+          <div className="space-y-4 sm:space-y-6">
+            {/* Profile Image */}
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-lime-200 dark:border-lime-800 shadow-xl">
+                  <img 
+                    src="https://res.cloudinary.com/dhbuw3k2w/image/upload/v1751102482/altamsh-portfolio/assets/gv7ys815nddftwwlvbko.jpg"
+                    alt="Altamsh Bairagdar"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
               Altamsh Bairagdar
             </h2>

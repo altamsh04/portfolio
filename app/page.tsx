@@ -231,52 +231,56 @@ export default function Portfolio() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
               Altamsh Bairagdar
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto px-2">
               A Full Stack Developer Who Loves Backend Most
             </p>
-            <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
-              <MapPin className="w-3 h-3" />
-              <span>Miraj Maharashtra, India</span>
-              <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse ml-1.5"></div>
-              <span>Available for work</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 text-xs text-slate-500 dark:text-slate-400 px-2">
+              <div className="flex items-center gap-1.5">
+                <MapPin className="w-3 h-3" />
+                <span>Miraj Maharashtra, India</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                <span>Available for work</span>
+              </div>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 px-2">
             <Button
               variant="outline"
               size="sm"
-              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1"
+              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-3 py-1.5 h-8"
               onClick={() => window.open("http://github.com/altamsh04", "_blank")}
             >
-              <Github className="w-3 h-3 mr-1" />
+              <Github className="w-3 h-3 mr-1.5" />
               GITHUB
             </Button>
             <Button
               variant="outline"
               size="sm"
-              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1"
+              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-3 py-1.5 h-8"
               onClick={() => window.open("https://www.linkedin.com/in/altamsh-bairagdar-324ab7254", "_blank")}
             >
-              <Linkedin className="w-3 h-3 mr-1" />
+              <Linkedin className="w-3 h-3 mr-1.5" />
               LINKEDIN
             </Button>
             <Button
               variant="outline"
               size="sm"
-              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1"
+              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-3 py-1.5 h-8"
               onClick={() => window.open("https://x.com/altamsh04", "_blank")}
             >
-              <Twitter className="w-3 h-3 mr-1" />
+              <Twitter className="w-3 h-3 mr-1.5" />
               X/TWITTER
             </Button>
             <Button
               size="sm"
-              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs px-2 py-1"
+              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs sm:text-sm px-3 py-1.5 h-8"
               onClick={() => window.open("mailto:bairagdaraltamsh@gmail.com", "_blank")}
             >
-              <Mail className="w-3 h-3 mr-1" />
+              <Mail className="w-3 h-3 mr-1.5" />
               CONTACT
             </Button>
           </div>
@@ -293,51 +297,58 @@ export default function Portfolio() {
                 key={project.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-lg transition-all duration-300"
               >
-                <CardContent className="p-3">
-                  <div className="flex flex-col sm:flex-row items-start justify-between gap-2.5 sm:gap-3">
-                    <div className="flex-1 space-y-1.5">
-                      <div className="flex items-start justify-between">
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{project.title}</h4>
-                        <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors">
-                          {project.status}
-                        </Badge>
-                      </div>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                        {project.description}
-                      </p>
-                      {project.technologies && (
-                        <div className="flex flex-wrap gap-1 mt-1.5">
-                          {project.technologies.map((tech) => (
-                            <Badge
-                              key={tech}
-                              variant="outline"
-                              className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      )}
+                <CardContent className="p-3 sm:p-4">
+                  <div className="space-y-3">
+                    {/* Header with title and status */}
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                      <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 leading-tight">{project.title}</h4>
+                      <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
+                        {project.status}
+                      </Badge>
                     </div>
-                    <div className="flex gap-1.5 mt-1.5 sm:mt-0 sm:ml-3">
+                    
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {project.description}
+                    </p>
+                    
+                    {/* Technologies */}
+                    {project.technologies && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.technologies.map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="outline"
+                            className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
+                    
+                    {/* Action buttons */}
+                    <div className="flex gap-2 pt-1">
                       {project.demoUrl && (
                         <Button
                           size="sm"
                           variant="outline"
-                          className="p-1.5 border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
+                          className="flex-1 sm:flex-none border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors h-8"
                           onClick={() => window.open(project.demoUrl, "_blank")}
                         >
-                          <ExternalLink className="w-3.5 h-3.5" />
+                          <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
+                          <span className="text-xs">Demo</span>
                         </Button>
                       )}
                       {project.codeUrl && (
                         <Button
                           size="sm"
                           variant="outline"
-                          className="p-1.5 border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
+                          className="flex-1 sm:flex-none border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors h-8"
                           onClick={() => window.open(project.codeUrl, "_blank")}
                         >
-                          <Github className="w-3.5 h-3.5" />
+                          <Github className="w-3.5 h-3.5 mr-1.5" />
+                          <span className="text-xs">Code</span>
                         </Button>
                       )}
                     </div>
@@ -359,49 +370,62 @@ export default function Portfolio() {
                 key={exp.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-3">
-                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-2.5">
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{exp.title}</h4>
-                      <p className="text-lime-600 dark:text-lime-400 font-medium text-xs">{exp.company}</p>
-                      <div className="flex flex-col xs:flex-row xs:items-center gap-1 xs:gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1">
+                <CardContent className="p-3 sm:p-4">
+                  <div className="space-y-3">
+                    {/* Header */}
+                    <div className="flex flex-col gap-2">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                        <div className="flex-1">
+                          <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">{exp.title}</h4>
+                          <p className="text-lime-600 dark:text-lime-400 font-medium text-xs sm:text-sm">{exp.company}</p>
+                        </div>
+                        {exp.current && (
+                          <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
+                            Current
+                          </Badge>
+                        )}
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-xs text-slate-500 dark:text-slate-400">
                         <span>{exp.location}</span>
+                        <span className="hidden sm:inline">•</span>
                         <span>
                           {formatDate(exp.startDate)} - {exp.current ? "Present" : formatDate(exp.endDate!)}
                         </span>
-                        <Badge variant="secondary" className="text-xs">
+                        <span className="hidden sm:inline">•</span>
+                        <Badge variant="secondary" className="text-xs self-start sm:self-auto">
                           {calculateDuration(exp.startDate, exp.endDate)}
                         </Badge>
                       </div>
                     </div>
-                    {exp.current && (
-                      <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
-                        Current
-                      </Badge>
-                    )}
-                  </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 mb-2.5">{exp.description}</p>
-                  <div className="space-y-1.5">
-                    <h5 className="font-medium text-slate-900 dark:text-slate-100 text-xs">KEY ACHIEVEMENTS:</h5>
-                    <ul className="space-y-0.5">
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i} className="flex items-start gap-1.5 text-xs text-slate-600 dark:text-slate-400">
-                          <div className="w-1 h-1 bg-lime-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                          {achievement}
-                        </li>
+                    
+                    {/* Description */}
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">{exp.description}</p>
+                    
+                    {/* Achievements */}
+                    <div className="space-y-2">
+                      <h5 className="font-medium text-slate-900 dark:text-slate-100 text-xs sm:text-sm">KEY ACHIEVEMENTS:</h5>
+                      <ul className="space-y-1">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                            <div className="w-1.5 h-1.5 bg-lime-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span className="leading-relaxed">{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {exp.technologies.map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="outline"
+                          className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
+                        >
+                          {tech}
+                        </Badge>
                       ))}
-                    </ul>
-                  </div>
-                  <div className="flex flex-wrap gap-1 mt-2.5">
-                    {exp.technologies.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="outline"
-                        className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -414,23 +438,23 @@ export default function Portfolio() {
           <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             ACHIEVEMENTS
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {achievementsData.map((achievement) => (
               <Card
                 key={achievement.name}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-2.5">
-                  <div className="flex items-start gap-2">
-                    <div className="w-5 h-5 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Trophy className="w-2.5 h-2.5 text-lime-600 dark:text-lime-400" />
+                <CardContent className="p-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Trophy className="w-3 h-3 text-lime-600 dark:text-lime-400" />
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xs">{achievement.name}</h4>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xs sm:text-sm leading-tight">{achievement.name}</h4>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
                         {achievement.issuer} • {achievement.year}
                       </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-500 mt-0.5">{achievement.description}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-500 mt-1 leading-relaxed">{achievement.description}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -450,34 +474,40 @@ export default function Portfolio() {
                 key={edu.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-3">
-                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{edu.degree}</h4>
-                      <p className="text-lime-600 dark:text-lime-400 font-medium text-xs">{edu.institution}</p>
-                      <div className="flex flex-col xs:flex-row xs:items-center gap-1 xs:gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1">
-                        <span>{edu.location}</span>
-                        <span>
-                          {formatDate(edu.startDate)} - {formatDate(edu.endDate)}
-                        </span>
+                <CardContent className="p-3 sm:p-4">
+                  <div className="space-y-3">
+                    {/* Header */}
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                      <div className="flex-1">
+                        <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">{edu.degree}</h4>
+                        <p className="text-lime-600 dark:text-lime-400 font-medium text-xs sm:text-sm">{edu.institution}</p>
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1">
+                          <span>{edu.location}</span>
+                          <span className="hidden sm:inline">•</span>
+                          <span>
+                            {formatDate(edu.startDate)} - {formatDate(edu.endDate)}
+                          </span>
+                        </div>
                       </div>
+                      <Badge variant="secondary" className="text-xs self-start sm:self-auto">
+                        {edu.gpa}
+                      </Badge>
                     </div>
-                    <Badge variant="secondary" className="text-xs self-start">
-                      {edu.gpa}
-                    </Badge>
+                    
+                    {/* Honors */}
+                    {edu.honors && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {edu.honors.map((honor) => (
+                          <Badge
+                            key={honor}
+                            className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors"
+                          >
+                            {honor}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  {edu.honors && (
-                    <div className="flex flex-wrap gap-1 mt-2.5">
-                      {edu.honors.map((honor) => (
-                        <Badge
-                          key={honor}
-                          className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors"
-                        >
-                          {honor}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             ))}

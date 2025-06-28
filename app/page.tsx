@@ -228,19 +228,19 @@ export default function Portfolio() {
         {/* Hero Section */}
         <section className="text-center space-y-3">
           <div className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
               Altamsh Bairagdar
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto px-2">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto px-2">
               A Full Stack Developer Who Loves Backend Most
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 text-xs text-slate-500 dark:text-slate-400 px-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 text-sm text-slate-500 dark:text-slate-400 px-2">
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-3 h-3" />
+                <MapPin className="w-4 h-4" />
                 <span>Miraj Maharashtra, India</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span>Available for work</span>
               </div>
             </div>
@@ -251,36 +251,36 @@ export default function Portfolio() {
             <Button
               variant="outline"
               size="sm"
-              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-3 py-1.5 h-8"
+              className="text-sm sm:text-base border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-4 py-2 h-10"
               onClick={() => window.open("http://github.com/altamsh04", "_blank")}
             >
-              <Github className="w-3 h-3 mr-1.5" />
+              <Github className="w-4 h-4 mr-2" />
               GITHUB
             </Button>
             <Button
               variant="outline"
               size="sm"
-              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-3 py-1.5 h-8"
+              className="text-sm sm:text-base border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-4 py-2 h-10"
               onClick={() => window.open("https://www.linkedin.com/in/altamsh-bairagdar-324ab7254", "_blank")}
             >
-              <Linkedin className="w-3 h-3 mr-1.5" />
+              <Linkedin className="w-4 h-4 mr-2" />
               LINKEDIN
             </Button>
             <Button
               variant="outline"
               size="sm"
-              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-3 py-1.5 h-8"
+              className="text-sm sm:text-base border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-4 py-2 h-10"
               onClick={() => window.open("https://x.com/altamsh04", "_blank")}
             >
-              <Twitter className="w-3 h-3 mr-1.5" />
+              <Twitter className="w-4 h-4 mr-2" />
               X/TWITTER
             </Button>
             <Button
               size="sm"
-              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs sm:text-sm px-3 py-1.5 h-8"
+              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-sm sm:text-base px-4 py-2 h-10"
               onClick={() => window.open("mailto:bairagdaraltamsh@gmail.com", "_blank")}
             >
-              <Mail className="w-3 h-3 mr-1.5" />
+              <Mail className="w-4 h-4 mr-2" />
               CONTACT
             </Button>
           </div>
@@ -288,7 +288,7 @@ export default function Portfolio() {
 
         {/* Projects */}
         <section className="space-y-3">
-          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             PROJECTS
           </h3>
           <div className="space-y-2.5">
@@ -297,29 +297,29 @@ export default function Portfolio() {
                 key={project.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-lg transition-all duration-300"
               >
-                <CardContent className="p-3 sm:p-4">
+                <CardContent className="p-4 sm:p-5">
                   <div className="space-y-3">
                     {/* Header with title and status */}
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                      <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 leading-tight">{project.title}</h4>
-                      <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
+                      <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 leading-tight">{project.title}</h4>
+                      <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-sm hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
                         {project.status}
                       </Badge>
                     </div>
                     
                     {/* Description */}
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                       {project.description}
                     </p>
                     
                     {/* Technologies */}
                     {project.technologies && (
-                      <div className="flex flex-wrap gap-1.5">
+                      <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech) => (
                           <Badge
                             key={tech}
                             variant="outline"
-                            className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
+                            className="text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
                           >
                             {tech}
                           </Badge>
@@ -333,22 +333,22 @@ export default function Portfolio() {
                         <Button
                           size="sm"
                           variant="outline"
-                          className="flex-1 sm:flex-none border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors h-8"
+                          className="flex-1 sm:flex-none border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors h-10"
                           onClick={() => window.open(project.demoUrl, "_blank")}
                         >
-                          <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
-                          <span className="text-xs">Demo</span>
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          <span className="text-sm">Demo</span>
                         </Button>
                       )}
                       {project.codeUrl && (
                         <Button
                           size="sm"
                           variant="outline"
-                          className="flex-1 sm:flex-none border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors h-8"
+                          className="flex-1 sm:flex-none border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors h-10"
                           onClick={() => window.open(project.codeUrl, "_blank")}
                         >
-                          <Github className="w-3.5 h-3.5 mr-1.5" />
-                          <span className="text-xs">Code</span>
+                          <Github className="w-4 h-4 mr-2" />
+                          <span className="text-sm">Code</span>
                         </Button>
                       )}
                     </div>
@@ -361,7 +361,7 @@ export default function Portfolio() {
 
         {/* Experience */}
         <section className="space-y-3">
-          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             EXPERIENCE
           </h3>
           <div className="space-y-3">
@@ -370,44 +370,44 @@ export default function Portfolio() {
                 key={exp.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-3 sm:p-4">
+                <CardContent className="p-4 sm:p-5">
                   <div className="space-y-3">
                     {/* Header */}
                     <div className="flex flex-col gap-2">
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                         <div className="flex-1">
-                          <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">{exp.title}</h4>
-                          <p className="text-lime-600 dark:text-lime-400 font-medium text-xs sm:text-sm">{exp.company}</p>
+                          <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">{exp.title}</h4>
+                          <p className="text-lime-600 dark:text-lime-400 font-medium text-sm sm:text-base">{exp.company}</p>
                         </div>
                         {exp.current && (
-                          <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
+                          <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-sm hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
                             Current
                           </Badge>
                         )}
                       </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-xs text-slate-500 dark:text-slate-400">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-slate-500 dark:text-slate-400">
                         <span>{exp.location}</span>
                         <span className="hidden sm:inline">•</span>
                         <span>
                           {formatDate(exp.startDate)} - {exp.current ? "Present" : formatDate(exp.endDate!)}
                         </span>
                         <span className="hidden sm:inline">•</span>
-                        <Badge variant="secondary" className="text-xs self-start sm:self-auto">
+                        <Badge variant="secondary" className="text-sm self-start sm:self-auto">
                           {calculateDuration(exp.startDate, exp.endDate)}
                         </Badge>
                       </div>
                     </div>
                     
                     {/* Description */}
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">{exp.description}</p>
+                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">{exp.description}</p>
                     
                     {/* Achievements */}
                     <div className="space-y-2">
-                      <h5 className="font-medium text-slate-900 dark:text-slate-100 text-xs sm:text-sm">KEY ACHIEVEMENTS:</h5>
-                      <ul className="space-y-1">
+                      <h5 className="font-medium text-slate-900 dark:text-slate-100 text-sm sm:text-base">KEY ACHIEVEMENTS:</h5>
+                      <ul className="space-y-1.5">
                         {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-                            <div className="w-1.5 h-1.5 bg-lime-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                          <li key={i} className="flex items-start gap-2 text-sm sm:text-base text-slate-600 dark:text-slate-400">
+                            <div className="w-2 h-2 bg-lime-400 rounded-full mt-2 flex-shrink-0"></div>
                             <span className="leading-relaxed">{achievement}</span>
                           </li>
                         ))}
@@ -415,12 +415,12 @@ export default function Portfolio() {
                     </div>
                     
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
                         <Badge
                           key={tech}
                           variant="outline"
-                          className="text-xs border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
+                          className="text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
                         >
                           {tech}
                         </Badge>
@@ -435,26 +435,26 @@ export default function Portfolio() {
 
         {/* Achievements */}
         <section className="space-y-3">
-          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             ACHIEVEMENTS
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {achievementsData.map((achievement) => (
               <Card
                 key={achievement.name}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-3">
+                <CardContent className="p-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Trophy className="w-3 h-3 text-lime-600 dark:text-lime-400" />
+                    <div className="w-8 h-8 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Trophy className="w-4 h-4 text-lime-600 dark:text-lime-400" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xs sm:text-sm leading-tight">{achievement.name}</h4>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-tight">{achievement.name}</h4>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
                         {achievement.issuer} • {achievement.year}
                       </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-500 mt-1 leading-relaxed">{achievement.description}</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-500 mt-1 leading-relaxed">{achievement.description}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -465,7 +465,7 @@ export default function Portfolio() {
 
         {/* Education */}
         <section className="space-y-3">
-          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             EDUCATION
           </h3>
           <div className="space-y-2.5">
@@ -474,14 +474,14 @@ export default function Portfolio() {
                 key={edu.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-3 sm:p-4">
+                <CardContent className="p-4 sm:p-5">
                   <div className="space-y-3">
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                       <div className="flex-1">
-                        <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">{edu.degree}</h4>
-                        <p className="text-lime-600 dark:text-lime-400 font-medium text-xs sm:text-sm">{edu.institution}</p>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1">
+                        <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">{edu.degree}</h4>
+                        <p className="text-lime-600 dark:text-lime-400 font-medium text-sm sm:text-base">{edu.institution}</p>
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-slate-500 dark:text-slate-400 mt-1">
                           <span>{edu.location}</span>
                           <span className="hidden sm:inline">•</span>
                           <span>
@@ -489,18 +489,18 @@ export default function Portfolio() {
                           </span>
                         </div>
                       </div>
-                      <Badge variant="secondary" className="text-xs self-start sm:self-auto">
+                      <Badge variant="secondary" className="text-sm self-start sm:self-auto">
                         {edu.gpa}
                       </Badge>
                     </div>
                     
                     {/* Honors */}
                     {edu.honors && (
-                      <div className="flex flex-wrap gap-1.5">
+                      <div className="flex flex-wrap gap-2">
                         {edu.honors.map((honor) => (
                           <Badge
                             key={honor}
-                            className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors"
+                            className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-sm hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors"
                           >
                             {honor}
                           </Badge>
@@ -517,65 +517,65 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className="bg-slate-900 dark:bg-slate-950 text-white mt-8">
-        <div className="max-w-4xl mx-auto px-3 sm:px-4 py-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+        <div className="max-w-4xl mx-auto px-3 sm:px-4 py-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-5 h-5 bg-lime-400 rounded-lg flex items-center justify-center">
-                  <Code2 className="w-3 h-3 text-slate-900" />
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-6 h-6 bg-lime-400 rounded-lg flex items-center justify-center">
+                  <Code2 className="w-4 h-4 text-slate-900" />
                 </div>
-                <span className="text-xs font-bold">ALTAMSH.BAIRAGDAR</span>
+                <span className="text-sm font-bold">ALTAMSH.BAIRAGDAR</span>
               </div>
-              <p className="text-slate-400 text-xs">Building the future, one line of code at a time.</p>
+              <p className="text-slate-400 text-sm">Building the future, one line of code at a time.</p>
             </div>
             <div>
-              <h4 className="font-bold mb-2 text-xs">CONNECT</h4>
-              <div className="space-y-1 text-xs text-slate-400">
-                <div className="flex items-center gap-1.5">
-                  <Mail className="w-2.5 h-2.5" />
+              <h4 className="font-bold mb-3 text-sm">CONNECT</h4>
+              <div className="space-y-2 text-sm text-slate-400">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
                   bairagdaraltamsh@gmail.com
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <Phone className="w-2.5 h-2.5" />
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
                   +91 8010208605
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <MapPin className="w-2.5 h-2.5" />
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4" />
                   Miraj Maharashtra, India
                 </div>
               </div>
             </div>
             <div>
-              <h4 className="font-bold mb-2 text-xs">LINKS</h4>
-              <div className="flex gap-1.5">
+              <h4 className="font-bold mb-3 text-sm">LINKS</h4>
+              <div className="flex gap-2">
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-1"
+                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-2 h-10"
                   onClick={() => window.open("http://github.com/altamsh04", "_blank")}
                 >
-                  <Github className="w-2.5 h-2.5" />
+                  <Github className="w-4 h-4" />
                 </Button>
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-1"
+                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-2 h-10"
                   onClick={() => window.open("https://www.linkedin.com/in/altamsh-bairagdar-324ab7254", "_blank")}
                 >
-                  <Linkedin className="w-2.5 h-2.5" />
+                  <Linkedin className="w-4 h-4" />
                 </Button>
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-1"
+                  className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-2 h-10"
                   onClick={() => window.open("https://x.com/altamsh04", "_blank")}
                 >
-                  <Twitter className="w-2.5 h-2.5" />
+                  <Twitter className="w-4 h-4" />
                 </Button>
               </div>
             </div>
           </div>
-          <div className="border-t border-slate-800 mt-4 pt-4 text-center text-slate-400 text-xs">
+          <div className="border-t border-slate-800 mt-6 pt-4 text-center text-slate-400 text-sm">
             <p>&copy; {new Date().getFullYear()} ALTAMSH BAIRAGDAR. ALL RIGHTS RESERVED.</p>
           </div>
         </div>

@@ -117,3 +117,46 @@
 .pixel-glow {
   animation: pixel-glow 2s ease-in-out infinite;
 }
+
+/* Custom Scrollbar Styles */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #d9f99d #f1f5f9; /* lime-200 thumb, slate-100 track */
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #f1f5f9; /* slate-100 */
+}
+body::-webkit-scrollbar-thumb {
+  background: #d9f99d; /* lime-200 */
+  border-radius: 8px;
+  border: 2px solid #f1f5f9;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #bef264; /* lime-300 */
+}
+body::-webkit-scrollbar-track {
+  background: #f1f5f9; /* slate-100 */
+  border-radius: 8px;
+}
+
+/* Dark mode scrollbar */
+html.dark {
+  scrollbar-color: #bef264 #1e293b; /* lime-300 thumb, slate-800 track */
+}
+html.dark body::-webkit-scrollbar {
+  background: #1e293b; /* slate-800 */
+}
+html.dark body::-webkit-scrollbar-thumb {
+  background: #bef264; /* lime-300 */
+  border-radius: 8px;
+  border: 2px solid #1e293b;
+}
+html.dark body::-webkit-scrollbar-thumb:hover {
+  background: #d9f99d; /* lime-200 */
+}
+html.dark body::-webkit-scrollbar-track {
+  background: #1e293b; /* slate-800 */
+  border-radius: 8px;
+}

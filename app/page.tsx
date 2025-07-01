@@ -5,7 +5,7 @@ import { useTheme } from "next-themes"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { MapPin, Code2, ExternalLink, Github, Trophy, Moon, Sun, Mail, Linkedin, Twitter, Phone } from "lucide-react"
+import { MapPin, Code2, ExternalLink, Github, Trophy, Moon, Sun, Mail, Linkedin, Twitter, Phone, ArrowUp } from "lucide-react"
 
 // Static data
 const projectsData = {
@@ -13,68 +13,52 @@ const projectsData = {
     {
       "id": 1,
       "title": "Accuia",
+      "icon": "/accuia-logo.svg",
       "description": "Chat with Your Database. Transform complex data into simple conversations. Search, explore, and interact with your product catalog using natural language — no SQL required.",
-      "status": "Personal",
       "demoUrl": "https://accuia.vercel.app/",
       "technologies": ["AI", "NextJS", "FastAPI", "Supabase", "Postgres"]
     },
     {
       "id": 2,
-      "title": "reminder-cli",
-      "description": "A simple Node.js command-line tool that allows users to set reminders for tasks or events directly from the terminal. Over 350+ downloads and growing.",
-      "status": "Personal",
+      "title": "Reminder-CLI (360+ Downloads)",
+      "icon": "/reminder-cli-logo.svg",
+      "description": "A simple Node.js command-line tool that allows users to set reminders for tasks or events directly from the terminal.",
       "demoUrl": "https://www.npmjs.com/package/@altamsh04/reminder-cli",
       "codeUrl": "https://github.com/altamsh04/reminder-cli",
-      "technologies": ["NodeJS", "CLI", "Task Manager", "Terminal", "Productivity"]
+      "technologies": ["NodeJS", "CLI", "Task Manager", "Productivity"]
     },
     {
       "id": 3,
       "title": "NPM Analytics Pro",
+      "icon": "/npm-analytics-logo.svg",
       "description": "Advanced package insights & comparison tool for NPM modules including trends, bundle analysis, and health scoring.",
-      "status": "Personal",
       "demoUrl": "https://npm-analytics-pro.altamsh.me/",
       "technologies": ["NextJS", "TailwindCSS", "Vercel", "NPM API"]
     },
     {
       "id": 4,
       "title": "Ghibli Meme Maker",
+      "icon": "https://res.cloudinary.com/dzbgzkwim/image/upload/v1743365151/ghibli_images/assets/sqopiavaiukpml9eu2fd.png", 
       "description": "Transform your favorite Studio Ghibli moments into hilarious memes with our easy-to-use meme creator.",
-      "status": "Personal",
       "demoUrl": "https://www.ghiblimemes.fun/",
       "technologies": ["React", "TailwindCSS", "Meme Editor"]
     },
     {
       "id": 5,
-      "title": "AI Powered LMS",
-      "description": "A learning management system powered by AI, using RAG (Retrieval-Augmented Generation) architecture for enhanced learning experiences.",
-      "status": "Hackathon",
-      "codeUrl": "https://github.com/altamsh04/aipoweredlms-backend",
-      "technologies": ["AI", "RAG", "AWS S3", "React", "Django"]
+      "title": "Embeetek Technologies",
+      "icon": "https://res.cloudinary.com/dhbuw3k2w/image/upload/v1744040070/embeetek.com/logo.png",
+      "description": "Personal organization website for project inquiry, project showcase, overall company services, features with admin panel.",
+      "demoUrl": "https://www.embeetek.com/",
+      "technologies": ["Freelance", "FullStack"]
     },
     {
       "id": 6,
-      "title": "Collaborative Project Management Tools for Remote Teams",
-      "description": "A comprehensive project management tool designed for remote teams to collaborate effectively.",
-      "status": "Hackathon",
-      "codeUrl": "https://github.com/altamsh04/hackathon-project-at-sgu",
-      "technologies": ["MongoDB", "Express", "React", "NodeJS"]
-    },
-    {
-      "id": 7,
-      "title": "Embeetek Technologies",
-      "description": "Personal organization website for project inquiry, project showcase, overall company services, features with admin panel.",
-      "status": "Freelance",
-      "demoUrl": "https://www.embeetek.com/",
-      "technologies": ["FullStack"]
-    },
-    {
-      "id": 8,
-      "title": "Basu Engineering",
+      "title": "Basu Engineering",  
+      "icon": "/basu-logo.jpg",
       "description": "Personal Organization website for products inquiry, overall company services, features etc with admin panel.",
-      "status": "Freelance",
       "demoUrl": "http://www.basuengineering.in",
-      "technologies": ["FullStack"]
-    }
+      "technologies": ["Freelance", "FullStack"]
+    },
   ]
 };
 
@@ -84,7 +68,8 @@ const experienceData = {
     {
       id: 1,
       title: "Software Developer",
-      company: "Embeetek Technologies · Freelance",
+      company: "Embeetek Technologies · SDE Freelance",
+      icon: "https://res.cloudinary.com/dhbuw3k2w/image/upload/v1744040070/embeetek.com/logo.png",
       location: "Miraj Maharashtra, India · Hybrid",
       startDate: "2025-01-01",
       endDate: null,
@@ -102,7 +87,8 @@ const experienceData = {
     {
       id: 2,
       title: "Software Developer",
-      company: "Knam Construction · Freelance",
+      company: "Knam Construction · SDE Freelance",
+      icon: "/knam-logo.png",
       location: "Miraj Maharashtra, India · Remote",
       startDate: "2024-11-01",
       endDate: "2025-02-28",
@@ -124,7 +110,7 @@ const achievementsData = [
     name: "Gate 2025 Qualified",
     issuer: "Hosted By IIT Roorkee",
     year: "2025",
-    description: "Competitive exams for engineering",
+    description: "Competitive exam for engineers",
   },
   {
     name: "Android Team Lead",
@@ -186,6 +172,7 @@ export default function Portfolio() {
     education: false,
     footer: false
   })
+  const [showGoTop, setShowGoTop] = useState(false)
   const { theme, setTheme } = useTheme()
 
   useEffect(() => {
@@ -210,6 +197,13 @@ export default function Portfolio() {
         }))
       }, delay)
     })
+
+    // Go to top button scroll listener
+    const onScroll = () => {
+      setShowGoTop(window.scrollY > 200)
+    }
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const formatDate = (dateString: string) => {
@@ -239,172 +233,158 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300 font-mono">
+      {/* Go to Top Button */}
+      {showGoTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-6 right-6 z-50 bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs p-3 rounded-full shadow-lg transition-all duration-300 border-2 border-white dark:border-slate-900"
+          aria-label="Go to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
+      )}
       {/* Theme Toggle - Fixed Top Right */}
       <div className="fixed top-3 right-3 sm:top-4 sm:right-4 z-50">
         <Button
           variant="outline"
-          size="sm"
+          size="icon"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors p-1.5 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm"
+          className="w-10 h-10 p-0 rounded-full flex items-center justify-center border-slate-300 dark:border-slate-600 bg-white/90 dark:bg-slate-900/90 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors shadow-md"
+          aria-label="Toggle theme"
         >
-          {theme === "dark" ? <Sun className="w-3 h-3" /> : <Moon className="w-3 h-3" />}
+          {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </Button>
       </div>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-3 sm:px-4 pt-12 sm:pt-16 md:pt-20 pb-4 sm:pb-6 space-y-5 sm:space-y-6">
+      <main className="max-w-4xl mx-auto px-2 xs:px-3 sm:px-4 pt-10 xs:pt-12 sm:pt-16 md:pt-20 pb-3 xs:pb-4 sm:pb-6 space-y-4 xs:space-y-5 sm:space-y-6">
         {/* Hero Section */}
         <section 
-          className={`text-center space-y-6 sm:space-y-8 transition-all duration-1000 ease-out ${
+          className={`text-center space-y-3 xs:space-y-4 sm:space-y-6 transition-all duration-1000 ease-out ${
             animationStates.hero 
               ? 'blur-0 opacity-100 translate-y-0' 
               : 'blur-md opacity-0 translate-y-4'
           }`}
         >
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-2 xs:space-y-3 sm:space-y-4">
             {/* Profile Image */}
             <div className="flex justify-center">
               <div className="relative">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-lime-200 dark:border-lime-800 shadow-xl">
+                <div className="w-20 h-20 xs:w-24 xs:h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden">
                   <img 
                     src="https://res.cloudinary.com/dhbuw3k2w/image/upload/v1751102482/altamsh-portfolio/assets/gv7ys815nddftwwlvbko.jpg"
                     alt="Altamsh Bairagdar"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full max-w-full object-cover"
                   />
                 </div>
               </div>
             </div>
-            
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
-              Altamsh Bairagdar
+            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight break-words">
+              Hi, I'm Altamsh Bairagdar
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto px-2">
-              A Full Stack Developer Who Loves Backend Most
+            <p className="text-xs xs:text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xl mx-auto px-2 break-words">
+              Full Stack Developer who flirts with frontend but is madly in love with backend. If there's an API to build, a database to tame, or a CLI tool that needs summoning, I'm already caffeinated and halfway through the job.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 text-sm text-slate-500 dark:text-slate-400 px-2">
-              <div className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4" />
-                <span>Miraj Maharashtra, India</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Available for work</span>
-              </div>
-            </div>
           </div>
-
           {/* Social Links */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 px-2">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 xs:gap-2 sm:gap-2.5 px-2">
             <Button
               variant="outline"
               size="sm"
-              className="text-sm sm:text-base border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-4 py-2 h-10"
+              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 h-8 min-w-[90px]"
               onClick={() => window.open("http://github.com/altamsh04", "_blank")}
             >
-              <Github className="w-4 h-4 mr-2" />
-              GITHUB
+              <Github className="w-3 h-3 mr-1" />
+              GitHub
             </Button>
             <Button
               variant="outline"
               size="sm"
-              className="text-sm sm:text-base border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-4 py-2 h-10"
+              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 h-8 min-w-[90px]"
               onClick={() => window.open("https://www.linkedin.com/in/altamsh-bairagdar-324ab7254", "_blank")}
             >
-              <Linkedin className="w-4 h-4 mr-2" />
-              LINKEDIN
+              <Linkedin className="w-3 h-3 mr-1" />
+              LinkedIn
             </Button>
             <Button
               variant="outline"
               size="sm"
-              className="text-sm sm:text-base border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-4 py-2 h-10"
+              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 h-8 min-w-[90px]"
               onClick={() => window.open("https://x.com/altamsh04", "_blank")}
             >
-              <Twitter className="w-4 h-4 mr-2" />
-              X/TWITTER
+              <Twitter className="w-3 h-3 mr-1" />
+              Twitter
             </Button>
             <Button
               size="sm"
-              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-sm sm:text-base px-4 py-2 h-10"
+              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs sm:text-sm px-2 py-1 h-8 min-w-[90px]"
               onClick={() => window.open("mailto:bairagdaraltamsh@gmail.com", "_blank")}
             >
-              <Mail className="w-4 h-4 mr-2" />
-              CONTACT
+              <Mail className="w-3 h-3 mr-1" />
+              Contact
             </Button>
           </div>
         </section>
 
         {/* Projects */}
         <section 
-          className={`space-y-3 transition-all duration-1000 ease-out ${
+          className={`space-y-2 xs:space-y-3 transition-all duration-1000 ease-out ${
             animationStates.projects 
               ? 'blur-0 opacity-100 translate-y-0' 
               : 'blur-md opacity-0 translate-y-4'
           }`}
         >
-          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+          <h3 className="text-sm xs:text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             PROJECTS
           </h3>
-          <div className="space-y-2.5">
+          <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {projectsData.projects.map((project) => (
               <Card
                 key={project.id}
-                className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-lg transition-all duration-300"
+                className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-lg transition-all duration-300 h-full"
               >
-                <CardContent className="p-4 sm:p-5">
-                  <div className="space-y-3">
-                    {/* Header with title and status */}
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                      <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 leading-tight">{project.title}</h4>
-                      <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-sm hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
-                        {project.status}
-                      </Badge>
+                <CardContent className="p-4 xs:p-5 sm:p-6 flex flex-col h-full">
+                  <div className="flex items-center gap-2 mb-2">
+                    <img src={project.icon} alt={project.title + ' icon'} className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 rounded-md bg-slate-100 dark:bg-slate-800 object-contain max-w-full h-auto" />
+                    <h4 className="text-base xs:text-lg font-bold text-slate-900 dark:text-slate-100 break-words">{project.title}</h4>
+                  </div>
+                  <p className="text-xs xs:text-sm sm:text-base text-slate-600 dark:text-slate-400 mb-2 xs:mb-3 flex-1 break-words">{project.description}</p>
+                  {project.technologies && (
+                    <div className="flex flex-wrap gap-1.5 xs:gap-2 mb-3 xs:mb-4">
+                      {project.technologies.map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="outline"
+                          className="text-xs border-slate-300 dark:border-slate-600"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
                     </div>
-                    
-                    {/* Description */}
-                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-                      {project.description}
-                    </p>
-                    
-                    {/* Technologies */}
-                    {project.technologies && (
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
-                          <Badge
-                            key={tech}
-                            variant="outline"
-                            className="text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
+                  )}
+                  <div className="flex gap-1.5 xs:gap-2 mt-auto">
+                    {project.demoUrl && (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="flex-1 border-slate-300 dark:border-slate-600"
+                        onClick={() => window.open(project.demoUrl, "_blank")}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Website
+                      </Button>
                     )}
-                    
-                    {/* Action buttons */}
-                    <div className="flex gap-2 pt-1">
-                      {project.demoUrl && (
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          className="flex-1 sm:flex-none border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors h-10"
-                          onClick={() => window.open(project.demoUrl, "_blank")}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          <span className="text-sm">Demo</span>
-                        </Button>
-                      )}
-                      {project.codeUrl && (
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          className="flex-1 sm:flex-none border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors h-10"
-                          onClick={() => window.open(project.codeUrl, "_blank")}
-                        >
-                          <Github className="w-4 h-4 mr-2" />
-                          <span className="text-sm">Code</span>
-                        </Button>
-                      )}
-                    </div>
+                    {project.codeUrl && (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="flex-1 border-slate-300 dark:border-slate-600"
+                        onClick={() => window.open(project.codeUrl, "_blank")}
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Source
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -414,72 +394,74 @@ export default function Portfolio() {
 
         {/* Experience */}
         <section 
-          className={`space-y-3 transition-all duration-1000 ease-out ${
+          className={`space-y-2 xs:space-y-3 transition-all duration-1000 ease-out ${
             animationStates.experience 
               ? 'blur-0 opacity-100 translate-y-0' 
               : 'blur-md opacity-0 translate-y-4'
           }`}
         >
-          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+          <h3 className="text-sm xs:text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             EXPERIENCE
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-2 xs:space-y-3">
             {experienceData.experiences.map((exp) => (
               <Card
                 key={exp.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-4 sm:p-5">
-                  <div className="space-y-3">
+                <CardContent className="p-3 xs:p-4 sm:p-5">
+                  <div className="space-y-2 xs:space-y-3">
                     {/* Header */}
-                    <div className="flex flex-col gap-2">
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div className="flex flex-col gap-1 xs:gap-2">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 xs:gap-2">
                         <div className="flex-1">
-                          <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">{exp.title}</h4>
-                          <p className="text-lime-600 dark:text-lime-400 font-medium text-sm sm:text-base">{exp.company}</p>
+                          <div className="flex items-center gap-2">
+                            <img src={exp.icon} alt={exp.company + ' icon'} className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 rounded-md bg-slate-100 dark:bg-slate-800 object-contain max-w-full h-auto" />
+                            <p className="text-lime-600 dark:text-lime-400 font-medium text-xs xs:text-sm sm:text-base break-words">{exp.company}</p>
+                          </div>
                         </div>
                         {exp.current && (
-                          <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-sm hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
+                          <Badge className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs xs:text-sm hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors self-start">
                             Current
                           </Badge>
                         )}
                       </div>
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-slate-500 dark:text-slate-400">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 xs:gap-1 sm:gap-2 text-xs xs:text-sm text-slate-500 dark:text-slate-400">
                         <span>{exp.location}</span>
                         <span className="hidden sm:inline">•</span>
                         <span>
                           {formatDate(exp.startDate)} - {exp.current ? "Present" : formatDate(exp.endDate!)}
                         </span>
                         <span className="hidden sm:inline">•</span>
-                        <Badge variant="secondary" className="text-sm self-start sm:self-auto">
+                        <Badge variant="secondary" className="text-xs xs:text-sm self-start sm:self-auto">
                           {calculateDuration(exp.startDate, exp.endDate)}
                         </Badge>
                       </div>
                     </div>
                     
                     {/* Description */}
-                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">{exp.description}</p>
+                    <p className="text-xs xs:text-sm sm:text-base text-slate-600 dark:text-slate-400 break-words">{exp.description}</p>
                     
                     {/* Achievements */}
-                    <div className="space-y-2">
-                      <h5 className="font-medium text-slate-900 dark:text-slate-100 text-sm sm:text-base">KEY ACHIEVEMENTS:</h5>
-                      <ul className="space-y-1.5">
+                    <div className="space-y-1 xs:space-y-2">
+                      <h5 className="font-medium text-slate-900 dark:text-slate-100 text-xs xs:text-sm sm:text-base">KEY ACHIEVEMENTS:</h5>
+                      <ul className="space-y-1 xs:space-y-1.5">
                         {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm sm:text-base text-slate-600 dark:text-slate-400">
-                            <div className="w-2 h-2 bg-lime-400 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="leading-relaxed">{achievement}</span>
+                          <li key={i} className="flex items-start gap-1 xs:gap-2 text-xs xs:text-sm sm:text-base text-slate-600 dark:text-slate-400">
+                            <div className="w-2 h-2 bg-lime-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span className="leading-relaxed break-words">{achievement}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1 xs:gap-2">
                       {exp.technologies.map((tech) => (
                         <Badge
                           key={tech}
                           variant="outline"
-                          className="text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
+                          className="text-xs xs:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors"
                         >
                           {tech}
                         </Badge>
@@ -494,65 +476,81 @@ export default function Portfolio() {
 
         {/* Achievements */}
         <section 
-          className={`space-y-3 transition-all duration-1000 ease-out ${
+          className={`space-y-2 xs:space-y-3 transition-all duration-1000 ease-out ${
             animationStates.achievements 
               ? 'blur-0 opacity-100 translate-y-0' 
               : 'blur-md opacity-0 translate-y-4'
           }`}
         >
-          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+          <h3 className="text-sm xs:text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             ACHIEVEMENTS
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 gap-2 xs:gap-2.5">
             {achievementsData.map((achievement) => (
               <Card
                 key={achievement.name}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Trophy className="w-4 h-4 text-lime-600 dark:text-lime-400" />
+                <CardContent className="p-2 xs:p-2.5">
+                  <div className="flex items-start gap-1.5 xs:gap-2">
+                    <div className="w-4 h-4 xs:w-5 xs:h-5 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Trophy className="w-2 h-2 xs:w-2.5 xs:h-2.5 text-lime-600 dark:text-lime-400" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-tight">{achievement.name}</h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                    <div className="flex-1">
+                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm xs:text-base break-words">{achievement.name}</h4>
+                      <p className="text-xs xs:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
                         {achievement.issuer} • {achievement.year}
                       </p>
-                      <p className="text-sm text-slate-500 dark:text-slate-500 mt-1 leading-relaxed">{achievement.description}</p>
+                      <p className="text-xs xs:text-sm text-slate-500 dark:text-slate-500 mt-0.5 break-words">{achievement.description}</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+          {/* GitHub Contribution Graph Card (separate) */}
+          <div className="mt-3 xs:mt-4">
+            <Card className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300">
+              <CardContent className="p-2 xs:p-4 flex flex-col items-center justify-center">
+                <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm xs:text-base mb-2 xs:mb-3">GitHub Contribution Graph</h4>
+                <img
+                  src="https://ghchart.rshah.org/altamsh04"
+                  alt="GitHub Contribution Graph for altamsh04"
+                  className="w-full rounded-lg border border-slate-200 dark:border-slate-700 shadow p-2 xs:p-4"
+                  style={{ minHeight: '120px', minWidth: 0 }}
+                  loading="lazy"
+                />
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">@altamsh04</p>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* Education */}
         <section 
-          className={`space-y-3 transition-all duration-1000 ease-out ${
+          className={`space-y-2 xs:space-y-3 transition-all duration-1000 ease-out ${
             animationStates.education 
               ? 'blur-0 opacity-100 translate-y-0' 
               : 'blur-md opacity-0 translate-y-4'
           }`}
         >
-          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+          <h3 className="text-sm xs:text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
             EDUCATION
           </h3>
-          <div className="space-y-2.5">
+          <div className="space-y-1.5 xs:space-y-2.5">
             {educationData.education.map((edu) => (
               <Card
                 key={edu.id}
                 className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
               >
-                <CardContent className="p-4 sm:p-5">
-                  <div className="space-y-3">
+                <CardContent className="p-3 xs:p-4 sm:p-5">
+                  <div className="space-y-2 xs:space-y-3">
                     {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 xs:gap-2">
                       <div className="flex-1">
-                        <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">{edu.degree}</h4>
-                        <p className="text-lime-600 dark:text-lime-400 font-medium text-sm sm:text-base">{edu.institution}</p>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-slate-500 dark:text-slate-400 mt-1">
+                        <h4 className="text-sm xs:text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 break-words">{edu.degree}</h4>
+                        <p className="text-lime-600 dark:text-lime-400 font-medium text-xs xs:text-sm sm:text-base break-words">{edu.institution}</p>
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 xs:gap-1 sm:gap-2 text-xs xs:text-sm text-slate-500 dark:text-slate-400 mt-1">
                           <span>{edu.location}</span>
                           <span className="hidden sm:inline">•</span>
                           <span>
@@ -560,18 +558,18 @@ export default function Portfolio() {
                           </span>
                         </div>
                       </div>
-                      <Badge variant="secondary" className="text-sm self-start sm:self-auto">
+                      <Badge variant="secondary" className="text-xs xs:text-sm self-start sm:self-auto">
                         {edu.gpa}
                       </Badge>
                     </div>
                     
                     {/* Honors */}
                     {edu.honors && (
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1 xs:gap-2">
                         {edu.honors.map((honor) => (
                           <Badge
                             key={honor}
-                            className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-sm hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors"
+                            className="bg-lime-100 dark:bg-lime-900/30 text-lime-800 dark:text-lime-400 text-xs xs:text-sm hover:bg-lime-200 dark:hover:bg-lime-900/50 transition-colors"
                           >
                             {honor}
                           </Badge>
@@ -594,8 +592,8 @@ export default function Portfolio() {
             : 'blur-md opacity-0 translate-y-4'
         }`}
       >
-        <div className="max-w-4xl mx-auto px-3 sm:px-4 py-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="max-w-4xl mx-auto px-2 xs:px-3 sm:px-4 py-4 xs:py-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-3 xs:gap-4 sm:gap-6">
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-6 h-6 bg-lime-400 rounded-lg flex items-center justify-center">

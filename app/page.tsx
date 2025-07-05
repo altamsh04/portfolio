@@ -272,7 +272,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="w-20 h-20 xs:w-24 xs:h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden">
                   <img 
-                    src="https://res.cloudinary.com/dhbuw3k2w/image/upload/v1751102482/altamsh-portfolio/assets/gv7ys815nddftwwlvbko.jpg"
+                    src="https://res.cloudinary.com/dhbuw3k2w/image/upload/fl_preserve_transparency/v1751700067/naruto_pfp.jpg"
                     alt="Altamsh Bairagdar"
                     className="w-full h-full max-w-full object-cover"
                   />

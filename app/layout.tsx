@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Altamsh Bairagdar Portfolio",
     images: [
       {
-        url: "https://res.cloudinary.com/dhbuw3k2w/image/upload/v1751102482/altamsh-portfolio/assets/gv7ys815nddftwwlvbko.jpg",
+        url: "https://res.cloudinary.com/dhbuw3k2w/image/upload/fl_preserve_transparency/v1751700067/naruto_pfp.jpg",
         width: 1200,
         height: 630,
         alt: "Altamsh Bairagdar - Full Stack Developer",
@@ -56,12 +56,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Altamsh Bairagdar - Full Stack Developer",
     description: "A passionate Full Stack Developer who loves building robust backend systems and creating seamless user experiences",
-    images: ["https://res.cloudinary.com/dhbuw3k2w/image/upload/v1751102482/altamsh-portfolio/assets/gv7ys815nddftwwlvbko.jpg"],
+    images: ["https://res.cloudinary.com/dhbuw3k2w/image/upload/fl_preserve_transparency/v1751700067/naruto_pfp.jpg"],
   },
   icons: {
-    icon: "https://res.cloudinary.com/dhbuw3k2w/image/upload/v1751102482/altamsh-portfolio/assets/gv7ys815nddftwwlvbko.jpg",
-    shortcut: "https://res.cloudinary.com/dhbuw3k2w/image/upload/v1751102482/altamsh-portfolio/assets/gv7ys815nddftwwlvbko.jpg",
-    apple: "https://res.cloudinary.com/dhbuw3k2w/image/upload/v1751102482/altamsh-portfolio/assets/gv7ys815nddftwwlvbko.jpg",
+    icon: "https://res.cloudinary.com/dhbuw3k2w/image/upload/fl_preserve_transparency/v1751700067/naruto_pfp.jpg",
+    shortcut: "https://res.cloudinary.com/dhbuw3k2w/image/upload/fl_preserve_transparency/v1751700067/naruto_pfp.jpg",
+    apple: "https://res.cloudinary.com/dhbuw3k2w/image/upload/fl_preserve_transparency/v1751700067/naruto_pfp.jpg",
   },
   robots: {
     index: true,

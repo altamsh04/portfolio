@@ -12,53 +12,54 @@ const projectsData = {
   "projects": [
     {
       "id": 1,
-      "title": "Accuia",
-      "icon": "/accuia-logo.svg",
-      "description": "Chat with Your Database. Transform complex data into simple conversations. Search, explore, and interact with your product catalog using natural language — no SQL required.",
-      "demoUrl": "https://accuia.vercel.app/",
-      "technologies": ["AI", "NextJS", "FastAPI", "Supabase", "Postgres"]
+      "title": "InfraAI - AI-Powered System Design Platform",
+      "icon": "/infra-ai-logo.svg",
+      "description": "Built comprehensive AI-powered web application converting natural language descriptions to detailed system architecture diagrams using Gemini 1.5 Flash with multi-turn conversation support and React Flow for interactive visual rendering of 50+ components and relationships, achieving 95% accuracy in architecture generation",
+      "demoUrl": "https://infra-ai.altamsh.me/",
+      "technologies": ["TypeScript", "Next.js", "React Flow", "Supabase", "Gemini 1.5", "NLP", "GENAI"]
     },
     {
       "id": 2,
-      "title": "Reminder-CLI (360+ Downloads)",
-      "icon": "/reminder-cli-logo.svg",
-      "description": "A simple Node.js command-line tool that allows users to set reminders for tasks or events directly from the terminal.",
-      "demoUrl": "https://www.npmjs.com/package/@altamsh04/reminder-cli",
-      "codeUrl": "https://github.com/altamsh04/reminder-cli",
-      "technologies": ["NodeJS", "CLI", "Task Manager", "Productivity"]
+      "title": "AIPoweredLMS Backend",
+      "icon": "/school.svg",
+      "description": "Developed highly scalable RAG backend system processing diverse educational content (PDFs, PPTs, documents) via AWS S3 with vector embeddings, featuring AI-driven note summarization, adaptive quiz generation across difficulty levels, and interactive concept visualizations achieving 90% accuracy",
+      "codeUrl": "https://github.com/altamsh04/aipoweredlms-backend",
+      "technologies": ["Python", "Django", "Vector DB", "AWS S3", "Gemini 1.5 Pro"]
     },
     {
       "id": 3,
+      "title": "Accuia - Chat With Database",
+      "icon": "/bot.svg",
+      "description": "Built sophisticated AI platform enabling seamless natural language PostgreSQL interaction using advanced SQL RAG architecture with intelligent conversational interface, multi-turn context retention, and support for complex layered database queries achieving 95% query accuracy and eliminating SQL knowledge requirements",
+      "demoUrl": "https://accuia.vercel.app/",
+      "codeUrl": "https://github.com/altamsh04/accuia",
+      "technologies": ["TypeScript", "Next.js", "FastAPI", "PostgreSQL", "Supabase", "Gemini 1.5 Pro"]
+    },
+    {
+      "id": 4,
+      "title": "Reminder-CLI (400+ Downloads)",
+      "icon": "/terminal.svg",
+      "description": "Developed feature-rich lightweight CLI productivity tool with advanced time-based scheduling capabilities, cross-platform compatibility, and intuitive command interface, published as open-source npm package achieving 390+ downloads with active community contributions and 98% user satisfaction rating",
+      "demoUrl": "https://www.npmjs.com/package/@altamsh04/reminder-cli",
+      "codeUrl": "https://github.com/altamsh04/reminder-cli",
+      "technologies": ["JavaScript", "NodeJS", "CLI", "Task Manager", "Productivity"]
+    },
+    {
+      "id": 5,
       "title": "NPM Analytics Pro",
-      "icon": "/npm-analytics-logo.svg",
+      "icon": "/package.svg",
       "description": "Advanced package insights & comparison tool for NPM modules including trends, bundle analysis, and health scoring.",
       "demoUrl": "https://npm-analytics-pro.altamsh.me/",
       "technologies": ["NextJS", "TailwindCSS", "Vercel", "NPM API"]
     },
     {
-      "id": 4,
+      "id": 6,
       "title": "Ghibli Meme Maker",
-      "icon": "https://res.cloudinary.com/dzbgzkwim/image/upload/v1743365151/ghibli_images/assets/sqopiavaiukpml9eu2fd.png", 
+      "icon": "/pencil.svg", 
       "description": "Transform your favorite Studio Ghibli moments into hilarious memes with our easy-to-use meme creator.",
       "demoUrl": "https://www.ghiblimemes.fun/",
       "technologies": ["React", "TailwindCSS", "Meme Editor"]
-    },
-    {
-      "id": 5,
-      "title": "Embeetek Technologies",
-      "icon": "https://res.cloudinary.com/dhbuw3k2w/image/upload/v1744040070/embeetek.com/logo.png",
-      "description": "Personal organization website for project inquiry, project showcase, overall company services, features with admin panel.",
-      "demoUrl": "https://www.embeetek.com/",
-      "technologies": ["Freelance", "FullStack"]
-    },
-    {
-      "id": 6,
-      "title": "Basu Engineering",  
-      "icon": "/basu-logo.jpg",
-      "description": "Personal Organization website for products inquiry, overall company services, features etc with admin panel.",
-      "demoUrl": "http://www.basuengineering.in",
-      "technologies": ["Freelance", "FullStack"]
-    },
+    }
   ]
 };
 
@@ -72,8 +73,8 @@ const experienceData = {
       icon: "https://res.cloudinary.com/dhbuw3k2w/image/upload/v1744040070/embeetek.com/logo.png",
       location: "Miraj Maharashtra, India · Hybrid",
       startDate: "2025-01-01",
-      endDate: null,
-      current: true,
+      endDate: "2025-06-01",
+      current: false,
       description:
         "As a Freelance Software Developer at Embeetek Technologies, I have successfully delivered over five software projects, specializing in cutting-edge technologies such as Artificial Intelligence, Image Processing and full-stack web development.",
       achievements: [
@@ -301,7 +302,7 @@ export default function Portfolio() {
               variant="outline"
               size="sm"
               className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 h-8 min-w-[90px]"
-              onClick={() => window.open("https://www.linkedin.com/in/altamsh-bairagdar-324ab7254", "_blank")}
+              onClick={() => window.open("https://www.linkedin.com/in/altamsh04/  ", "_blank")}
             >
               <Linkedin className="w-3 h-3 mr-1" />
               LinkedIn

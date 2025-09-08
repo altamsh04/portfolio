@@ -68,6 +68,24 @@ const experienceData = {
   experiences: [
     {
       id: 1,
+      title: "Full Stack Developer Intern",
+      company: "Banza App · Internship",
+      icon: "/banzaofficial_logo.jpeg",
+      location: "Dubai · Remote",
+      startDate: "2025-08-01",
+      endDate: null,
+      current: true,
+      description:
+        "Contributing to the development of a new platform for Banza App, enhancing user experience through full stack development and implementing robust data security measures.",
+      achievements: [
+        "Contributed to the development of a new platform for Banza App, enhancing user experience.",
+        "Implemented OPzkTLS based data security, ensuring robust protection of sensitive information.",
+        "Engaged in full stack development, gaining comprehensive technical expertise.",
+      ],
+      technologies: ["Full-Stack Development", "OPzkTLS"],
+    },
+    {
+      id: 2,
       title: "Software Developer",
       company: "Embeetek Technologies · SDE Freelance",
       icon: "https://res.cloudinary.com/dhbuw3k2w/image/upload/v1744040070/embeetek.com/logo.png",
@@ -86,7 +104,7 @@ const experienceData = {
       technologies: ["Computer Vision", "AI", "ML", "Firebase", "React", "NodeJS", "MQTT"],
     },
     {
-      id: 2,
+      id: 3,
       title: "Software Developer",
       company: "Knam Construction · SDE Freelance",
       icon: "/knam-logo.png",

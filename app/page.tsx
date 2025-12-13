@@ -126,6 +126,13 @@ const experienceData = {
 
 const achievementsData = [
   {
+    name: "Smart India Hackathon 2025 Winner",
+    issuer: "Government of India",
+    year: "2025",
+    description: "National level hackathon winner",
+    logo: "/sih_logo_png.png",
+  },
+  {
     name: "Gate 2025 Qualified",
     issuer: "Hosted By IIT Roorkee",
     year: "2025",
@@ -508,13 +515,23 @@ export default function Portfolio() {
             {achievementsData.map((achievement) => (
               <Card
                 key={achievement.name}
-                className="border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300"
+                className={`border-slate-200 dark:border-slate-800 hover:border-lime-400 hover:shadow-md transition-all duration-300 ${
+                  achievement.name === "Smart India Hackathon 2025 Winner" ? "sm:col-span-2" : ""
+                }`}
               >
                 <CardContent className="p-2 xs:p-2.5">
                   <div className="flex items-start gap-1.5 xs:gap-2">
-                    <div className="w-4 h-4 xs:w-5 xs:h-5 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Trophy className="w-2 h-2 xs:w-2.5 xs:h-2.5 text-lime-600 dark:text-lime-400" />
-                    </div>
+                    {achievement.logo ? (
+                      <img 
+                        src={achievement.logo} 
+                        alt={achievement.name} 
+                        className="w-8 h-8 xs:w-10 xs:h-10 rounded-lg object-contain flex-shrink-0 bg-slate-100 dark:bg-slate-800 p-1"
+                      />
+                    ) : (
+                      <div className="w-4 h-4 xs:w-5 xs:h-5 bg-lime-100 dark:bg-lime-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Trophy className="w-2 h-2 xs:w-2.5 xs:h-2.5 text-lime-600 dark:text-lime-400" />
+                      </div>
+                    )}
                     <div className="flex-1">
                       <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm xs:text-base break-words">{achievement.name}</h4>
                       <p className="text-xs xs:text-sm text-slate-600 dark:text-slate-400 mt-0.5">

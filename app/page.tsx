@@ -129,7 +129,7 @@ const achievementsData = [
     name: "Smart India Hackathon 2025 Winner",
     issuer: "Government of India",
     year: "2025",
-    description: "National level hackathon winner",
+    description: "National level hackathon",
     logo: "/sih_logo_png.png",
   },
   {
@@ -309,7 +309,7 @@ export default function Portfolio() {
               Hi, I'm Altamsh Bairagdar
             </h2>
             <p className="text-xs xs:text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xl mx-auto px-2 break-words">
-              Full Stack Developer who flirts with frontend but is madly in love with backend. If there's an API to build, a database to tame, or a CLI tool that needs summoning, I'm already caffeinated and halfway through the job.
+              Full Stack Developer who flirts with frontend but is madly in love with backend. Also casually teaching machines to think while they're still figuring out if I'm their creator or just another bug in the matrix. If there's an API to build, a database to tame, an AI model to sweet-talk, or a CLI tool that needs summoning, I'm already caffeinated and halfway through the job.
             </p>
           </div>
           {/* Social Links */}
@@ -671,7 +671,7 @@ export default function Portfolio() {
                   size="sm"
                   variant="outline"
                   className="border-slate-700 text-slate-400 hover:border-lime-400 hover:text-lime-400 transition-colors p-2 h-10"
-                  onClick={() => window.open("https://www.linkedin.com/in/altamsh-bairagdar-324ab7254", "_blank")}
+                  onClick={() => window.open("https://www.linkedin.com/in/altamsh04", "_blank")}
                 >
                   <Linkedin className="w-4 h-4" />
                 </Button>

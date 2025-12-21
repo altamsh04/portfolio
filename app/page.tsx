@@ -5,7 +5,8 @@ import { useTheme } from "next-themes"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { MapPin, Code2, ExternalLink, Github, Trophy, Moon, Sun, Mail, Linkedin, Twitter, Phone, ArrowUp } from "lucide-react"
+import { MapPin, Code2, ExternalLink, Github, Trophy, Moon, Sun, Mail, Linkedin, Twitter, Phone, ArrowUp, Book } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 // Static data
 const projectsData = {
@@ -189,6 +190,7 @@ const educationData = {
 }
 
 export default function Portfolio() {
+  const router = useRouter()
   const [mounted, setMounted] = useState(false)
   const [animationStates, setAnimationStates] = useState({
     hero: false,
@@ -342,12 +344,22 @@ export default function Portfolio() {
               Twitter
             </Button>
             <Button
+              variant="outline"
               size="sm"
-              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs sm:text-sm px-2 py-1 h-8 min-w-[90px]"
+              className="text-xs sm:text-sm border-slate-300 dark:border-slate-600 hover:border-lime-400 hover:text-lime-600 dark:hover:text-lime-400 transition-colors px-2 py-1 h-8 min-w-[90px]"
               onClick={() => window.open("mailto:bairagdaraltamsh@gmail.com", "_blank")}
             >
               <Mail className="w-3 h-3 mr-1" />
               Contact
+            </Button>
+            <Button
+              size="sm"
+              className="bg-lime-400 hover:bg-lime-500 text-slate-900 font-bold transition-colors text-xs sm:text-sm px-2 py-1 h-8 min-w-[90px] disabled:opacity-50 disabled:cursor-not-allowed"
+              onClick={() => router.push("/blogs")}
+              disabled={process.env.NEXT_PUBLIC_BLOGS_FEATURE !== "true"}
+            >
+              <Book className="w-3 h-3 mr-1" />
+              Blogs
             </Button>
           </div>
         </section>

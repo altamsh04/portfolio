@@ -66,7 +66,7 @@ func (h *BlogHandler) CreateBlog(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "failed to get image file: " + err.Error()})
 		return
 	}
-
+	
 	if err == nil && file != nil {
 		src, err := file.Open()
 		if err != nil {
@@ -149,7 +149,7 @@ func (h *BlogHandler) GetBlog(c *gin.Context) {
 
 func (h *BlogHandler) GetBlogBySlug(c *gin.Context) {
 	slug := c.Param("slug")
-
+	
 	blog, err := h.repo.GetBySlug(slug)
 	if err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "blog not found"})

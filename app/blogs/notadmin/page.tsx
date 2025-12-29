@@ -137,21 +137,21 @@ export default function AdminPage() {
           })
         }
       } else {
-        const data = new FormData()
-        data.append("title", formData.title)
-        data.append("content", formData.content)
-        if (formData.excerpt) data.append("excerpt", formData.excerpt)
-        if (formData.category) data.append("category", formData.category)
-        if (formData.tags) data.append("tags", formData.tags)
-        data.append("status", formData.status)
-        if (imageFile) data.append("image", imageFile)
+      const data = new FormData()
+      data.append("title", formData.title)
+      data.append("content", formData.content)
+      if (formData.excerpt) data.append("excerpt", formData.excerpt)
+      if (formData.category) data.append("category", formData.category)
+      if (formData.tags) data.append("tags", formData.tags)
+      data.append("status", formData.status)
+      if (imageFile) data.append("image", imageFile)
 
-        await createBlog(data)
-        
-        toast({
-          title: "Success",
-          description: "Blog created successfully",
-        })
+      await createBlog(data)
+      
+      toast({
+        title: "Success",
+        description: "Blog created successfully",
+      })
       }
       
       resetForm()
@@ -261,15 +261,15 @@ export default function AdminPage() {
                       )}
                     </div>
                   ) : (
-                    <Textarea
-                      id="content"
-                      value={formData.content}
-                      onChange={(e) => setFormData({ ...formData, content: e.target.value })}
+                  <Textarea
+                    id="content"
+                    value={formData.content}
+                    onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                       rows={12}
-                      required
+                    required
                       placeholder="Write your content in Markdown format..."
                       className="font-mono text-sm"
-                    />
+                  />
                   )}
                 </div>
 
@@ -329,15 +329,15 @@ export default function AdminPage() {
                     </Button>
                   )}
                   <Button type="submit" disabled={submitting} className={editingBlogId ? "flex-1" : "w-full"}>
-                    {submitting ? (
-                      <>
-                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  {submitting ? (
+                    <>
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                         {editingBlogId ? "Updating..." : "Creating..."}
-                      </>
-                    ) : (
+                    </>
+                  ) : (
                       editingBlogId ? "Update" : "Create Blog"
-                    )}
-                  </Button>
+                  )}
+                </Button>
                 </div>
               </form>
             </CardContent>
@@ -391,14 +391,14 @@ export default function AdminPage() {
                               >
                                 <Edit className="h-4 w-4" />
                               </Button>
-                              <Button
-                                variant="ghost"
-                                size="sm"
-                                onClick={() => handleDelete(blog.id)}
-                                className="text-destructive hover:text-destructive"
-                              >
-                                <Trash2 className="h-4 w-4" />
-                              </Button>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => handleDelete(blog.id)}
+                              className="text-destructive hover:text-destructive"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
                             </div>
                           </TableCell>
                         </TableRow>

@@ -5,6 +5,7 @@ import (
 	"blog-api/internal/middleware"
 	"blog-api/internal/services"
 	"log"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -17,6 +18,8 @@ func SetupRoutes(router *gin.Engine) {
 	}
 
 	blogHandler := handlers.NewBlogHandler(cloudinaryService)
+	authHandler := handlers.NewAuthHandler()
+	authRoutePath := os.Getenv("AUTH_ROUTE_PATH")
 
 	api := router.Group("/api/v1")
 	{
@@ -35,6 +38,12 @@ func SetupRoutes(router *gin.Engine) {
 			blogs.PUT("/:id", blogHandler.UpdateBlog)
 			blogs.DELETE("/:id", blogHandler.DeleteBlog)
 		}
+
+		if authRoutePath != "" {
+			auth := api.Group(authRoutePath)
+			{
+				auth.POST("/admin", middleware.APIKeyAuth(), authHandler.AdminLogin)
+			}
+		}
 	}
 }
-

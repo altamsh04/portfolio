@@ -1,4 +1,5 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
+const AUTH_ROUTE_PATH = process.env.NEXT_PUBLIC_AUTH_ROUTE_PATH || ""
 
 export interface Blog {
   id: string;
@@ -115,4 +116,42 @@ export async function deleteBlog(id: string): Promise<void> {
     const error = await response.json();
     throw new Error(error.error || "Failed to delete blog");
   }
+}
+
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface LoginResponse {
+  id: string;
+  email: string;
+  role: string;
+  last_logged_in: string;
+  message: string;
+}
+
+export async function adminLogin(email: string, password: string): Promise<LoginResponse> {
+  let authPath = (AUTH_ROUTE_PATH || "").trim()
+  if (authPath && !authPath.startsWith("/")) {
+    authPath = `/${authPath}`
+  }
+  if (authPath && authPath.endsWith("/")) {
+    authPath = authPath.slice(0, -1)
+  }
+  
+  const endpoint = `${API_BASE_URL}${authPath}/admin`
+  
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: getHeaders("application/json"),
+    body: JSON.stringify({ email, password }),
+  });
+  
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.error || error.message || "Failed to login");
+  }
+  
+  return response.json();
 }

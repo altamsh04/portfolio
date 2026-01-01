@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -15,7 +16,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { getAllBlogs, createBlog, updateBlog, deleteBlog, Blog } from "@/lib/api"
-import { Trash2, Loader2, Edit, Eye, EyeOff } from "lucide-react"
+import { Trash2, Loader2, Edit, Eye, EyeOff, LogOut } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
@@ -26,6 +27,8 @@ export default function AdminPage() {
   const [submitting, setSubmitting] = useState(false)
   const [editingBlogId, setEditingBlogId] = useState<string | null>(null)
   const [showPreview, setShowPreview] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [checkingAuth, setCheckingAuth] = useState(true)
   const [formData, setFormData] = useState({
     title: "",
     content: "",
@@ -36,14 +39,67 @@ export default function AdminPage() {
   })
   const [imageFile, setImageFile] = useState<File | null>(null)
   const { toast } = useToast()
+  const router = useRouter()
 
   useEffect(() => {
+    const checkAuth = () => {
+      if (typeof window !== "undefined") {
+        const token = localStorage.getItem("admin_token")
+        const adminUserStr = localStorage.getItem("admin_user")
+        const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL
+
+        if (!token) {
+          router.push("/blogs/dologin")
+          return false
+        }
+
+        if (!adminUserStr) {
+          router.push("/blogs/dologin")
+          return false
+        }
+
+        try {
+          const adminUser = JSON.parse(adminUserStr)
+          if (!adminUser.email) {
+            router.push("/blogs/dologin")
+            return false
+          }
+
+          if (adminEmail && adminUser.email.trim().toLowerCase() !== adminEmail.trim().toLowerCase()) {
+            router.push("/blogs/dologin")
+            return false
+          }
+        } catch (error) {
+          router.push("/blogs/dologin")
+          return false
+        }
+
+        setIsAuthenticated(true)
+        return true
+      }
+      return false
+    }
+
     if (process.env.NEXT_PUBLIC_BLOGS_FEATURE !== "true") {
       window.location.href = "/"
       return
     }
-    fetchBlogs()
-  }, [])
+
+    const authenticated = checkAuth()
+    setCheckingAuth(false)
+    
+    if (authenticated) {
+      fetchBlogs()
+    }
+  }, [router])
+
+  const handleLogout = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("admin_token")
+      localStorage.removeItem("admin_user")
+      router.push("/blogs/dologin")
+    }
+  }
 
   const fetchBlogs = async () => {
     try {
@@ -195,10 +251,37 @@ export default function AdminPage() {
     })
   }
 
+  // Show loading state while checking authentication
+  if (checkingAuth) {
+    return (
+      <div className="container mx-auto px-4 py-16 min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="h-12 w-12 animate-spin mx-auto mb-4" />
+          <p className="text-muted-foreground">Checking authentication...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Don't render if not authenticated (will redirect)
+  if (!isAuthenticated) {
+    return null
+  }
+
   return (
     <div className="container mx-auto px-4 py-16 min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Blog Admin Panel</h1>
+        <div className="flex items-center justify-between mb-8">
+          <h1 className="text-4xl font-bold">Blog Admin Panel</h1>
+          <Button
+            variant="outline"
+            onClick={handleLogout}
+            className="flex items-center gap-2"
+          >
+            <LogOut className="h-4 w-4" />
+            Logout
+          </Button>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card>

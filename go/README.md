@@ -41,17 +41,23 @@ A simple blog API built with Go, Gin, and PostgreSQL.
    DB_NAME=blog_db
    DB_SSLMODE=disable
    SERVER_PORT=8080
+   DATABASE_URL=postgresql://user:password@host:port/database
    CLOUDINARY_URL=cloudinary://API_KEY:API_SECRET@CLOUD_NAME
    API_KEY=your-secure-api-key-here
+   AUTH_ROUTE_PATH=/your-custom-auth-path
    RATE_LIMIT_RPS=10
    RATE_LIMIT_BURST=20
+   ALLOWED_ORIGINS=http://localhost:3000
    ```
    
    **Notes:**
    - Replace `API_KEY`, `API_SECRET`, and `CLOUD_NAME` with your actual Cloudinary credentials. You can find these in your Cloudinary dashboard.
    - Replace `API_KEY` with a secure random string (generate using `openssl rand -hex 32`). This key is required for all API operations.
+   - `DATABASE_URL`: Full PostgreSQL connection string (required)
+   - `AUTH_ROUTE_PATH`: Custom path for authentication routes. Set this to a custom value for security in production.
    - `RATE_LIMIT_RPS`: Requests per second allowed per IP (default: 10)
    - `RATE_LIMIT_BURST`: Maximum burst of requests allowed (default: 20)
+   - `ALLOWED_ORIGINS`: Comma-separated list of allowed CORS origins
    - See [SECURITY.md](./SECURITY.md) for detailed security setup instructions.
 
 4. **Run the application:**

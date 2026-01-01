@@ -132,15 +132,10 @@ export interface LoginResponse {
 }
 
 export async function adminLogin(email: string, password: string): Promise<LoginResponse> {
+
   let authPath = (AUTH_ROUTE_PATH || "").trim()
-  if (authPath && !authPath.startsWith("/")) {
-    authPath = `/${authPath}`
-  }
-  if (authPath && authPath.endsWith("/")) {
-    authPath = authPath.slice(0, -1)
-  }
   
-  const endpoint = `${API_BASE_URL}${authPath}/admin`
+  const endpoint = `${API_BASE_URL}/${authPath}/admin`;
   
   const response = await fetch(endpoint, {
     method: "POST",
@@ -149,8 +144,16 @@ export async function adminLogin(email: string, password: string): Promise<Login
   });
   
   if (!response.ok) {
-    const error = await response.json();
-    throw new Error(error.error || error.message || "Failed to login");
+    let errorMessage = "Failed to login"
+    try {
+      const error = await response.json();
+      errorMessage = error.error || error.message || errorMessage
+    } catch {
+      errorMessage = response.status === 404 
+        ? `Endpoint not found: ${endpoint}` 
+        : `Login failed with status ${response.status}`
+    }
+    throw new Error(errorMessage)
   }
   
   return response.json();

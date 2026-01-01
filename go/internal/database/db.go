@@ -89,7 +89,7 @@ func forceIPv4(dsn string) string {
 }
 
 func Migrate() error {
-	err := DB.AutoMigrate(&models.Blog{})
+	err := DB.AutoMigrate(&models.Blog{}, &models.Auth{})
 	if err != nil {
 		return fmt.Errorf("failed to migrate database: %w", err)
 	}

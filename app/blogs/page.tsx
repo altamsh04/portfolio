@@ -89,41 +89,47 @@ export default function BlogsPage() {
             <p className="text-muted-foreground text-lg">No blog posts available yet.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-4">
             {blogs.map((blog) => (
               <Card
                 key={blog.id}
                 className="cursor-pointer hover:shadow-lg transition-shadow overflow-hidden"
                 onClick={() => router.push(`/blogs/${blog.slug}`)}
               >
-                {blog.featured_image && (
-                  <div className="relative w-full h-48">
-                    <Image
-                      src={blog.featured_image}
-                      alt={blog.title}
-                      fill
-                      className="object-cover"
-                      priority={blogs.indexOf(blog) < 6}
-                    />
-                  </div>
-                )}
-                <CardContent className="p-6">
-                  {blog.category && blog.category.trim() !== "" && (
-                    <Badge variant="secondary" className="mb-3">
-                      {blog.category}
-                    </Badge>
-                  )}
-                  <h2 className="text-xl font-semibold mb-2 line-clamp-2">{blog.title}</h2>
-                  {blog.excerpt && (
-                    <p className="text-muted-foreground mb-4 line-clamp-3">{blog.excerpt}</p>
-                  )}
-                  {blog.published_at && (
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      {formatDate(blog.published_at)}
+                <div className="flex flex-col sm:flex-row">
+                  {blog.featured_image && (
+                    <div className="relative w-full sm:w-48 h-48 sm:h-auto flex-shrink-0">
+                      <Image
+                        src={blog.featured_image}
+                        alt={blog.title}
+                        fill
+                        className="object-cover"
+                        priority={blogs.indexOf(blog) < 6}
+                      />
                     </div>
                   )}
-                </CardContent>
+                  <CardContent className="p-6 flex-1">
+                    <div className="flex flex-col h-full">
+                      <div className="flex items-start gap-3 mb-2">
+                        {blog.category && blog.category.trim() !== "" && (
+                          <Badge variant="secondary" className="flex-shrink-0">
+                            {blog.category}
+                          </Badge>
+                        )}
+                        <h2 className="text-xl font-semibold line-clamp-2 flex-1">{blog.title}</h2>
+                      </div>
+                      {blog.excerpt && (
+                        <p className="text-muted-foreground mb-4 line-clamp-2 flex-1">{blog.excerpt}</p>
+                      )}
+                      {blog.published_at && (
+                        <div className="flex items-center text-sm text-muted-foreground mt-auto">
+                          <Calendar className="h-4 w-4 mr-2" />
+                          {formatDate(blog.published_at)}
+                        </div>
+                      )}
+                    </div>
+                  </CardContent>
+                </div>
               </Card>
             ))}
           </div>
